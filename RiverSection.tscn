@@ -21,3 +21,7 @@ polygon = PoolVector2Array( 0, 0, 41, 0, 41, 4, 0, 4 )
 color = Color( 0.145098, 0.54902, 0.2, 1 )
 polygon = PoolVector2Array( 0, 0, 51, 0, 51, 4, 0, 4 )
 
+[node name="Island" type="Polygon2D" parent="."]
+position = Vector2( 128, 0 )
+color = Color( 0.145098, 0.54902, 0.2, 1 )
+polygon = PoolVector2Array( -10, 0, 10, 0, 10, 4, -10, 4 )
