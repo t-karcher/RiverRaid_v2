@@ -1,0 +1,122 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://RiverSection.tscn" type="PackedScene" id=1]
+[ext_resource path="res://RiverSection.gd" type="Script" id=2]
+[ext_resource path="res://Player.gd" type="Script" id=3]
+[ext_resource path="res://images/RRaid_Player.png" type="Texture" id=4]
+[ext_resource path="res://WidthMarker.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7, 8 )
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2( 4, -4 )
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="RiverSection" type="Node2D" parent="Level" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+startWidth = 50
+endWidth = 50
+startJitter = 0
+
+[node name="RiverSection2" type="Node2D" parent="Level" instance=ExtResource( 1 )]
+position = Vector2( 0, 4 )
+script = ExtResource( 2 )
+startWidth = 50
+endWidth = 51
+
+[node name="RiverSection3" type="Node2D" parent="Level" instance=ExtResource( 1 )]
+position = Vector2( 0, 8 )
+script = ExtResource( 2 )
+startWidth = 51
+endWidth = 46
+endJitter = -5
+
+[node name="RiverSection4" type="Node2D" parent="Level" instance=ExtResource( 1 )]
+position = Vector2( 0, 12 )
+script = ExtResource( 2 )
+startWidth = 46
+endWidth = 51
+startJitter = -5
+endJitter = -3
+
+[node name="RiverSection5" type="Node2D" parent="Level" instance=ExtResource( 1 )]
+position = Vector2( 0, 16 )
+script = ExtResource( 2 )
+startWidth = 51
+endWidth = 56
+startJitter = -3
+endJitter = -1
+
+[node name="RiverSection6" type="Node2D" parent="Level" instance=ExtResource( 1 )]
+position = Vector2( 0, 20 )
+script = ExtResource( 2 )
+startWidth = 56
+endWidth = 56
+startJitter = -1
+endJitter = 4
+
+[node name="RiverSection7" type="Node2D" parent="Level" instance=ExtResource( 1 )]
+position = Vector2( 0, 24 )
+script = ExtResource( 2 )
+startWidth = 56
+endWidth = 56
+startJitter = 4
+endJitter = 3
+
+[node name="RiverSection8" type="Node2D" parent="Level" instance=ExtResource( 1 )]
+position = Vector2( 0, 28 )
+script = ExtResource( 2 )
+startWidth = 56
+endWidth = 56
+startJitter = 3
+endJitter = -1
+
+[node name="RiverSection9" type="Node2D" parent="Level" instance=ExtResource( 1 )]
+position = Vector2( 0, 32 )
+script = ExtResource( 2 )
+startWidth = 56
+endWidth = 59
+startJitter = -1
+endJitter = -3
+
+[node name="RiverSection10" type="Node2D" parent="Level" instance=ExtResource( 1 )]
+position = Vector2( 0, 36 )
+script = ExtResource( 2 )
+startWidth = 59
+endWidth = 59
+startJitter = -3
+endJitter = 1
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 140.75, -99.5 )
+scale = Vector2( 1, -1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player"]
+texture = ExtResource( 4 )
+vframes = 3
+hframes = 3
+region_rect = Rect2( 0, 0, 16, 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+
+[node name="LevelEditor" type="Node2D" parent="."]
+
+[node name="WidthMarker" type="Position2D" parent="LevelEditor"]
+position = Vector2( 43.5, 2 )
+script = ExtResource( 5 )
+
+[node name="WidthMarker2" type="Position2D" parent="LevelEditor"]
+position = Vector2( 30.5, 22 )
+script = ExtResource( 5 )
+origY = 22
+

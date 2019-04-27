@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://RiverSection.gd" type="Script" id=1]
+
+[node name="RiverSection" type="Node2D"]
+script = ExtResource( 1 )
+startWidth = 46.0
+endWidth = 46.0
+
+[node name="River" type="Polygon2D" parent="."]
+color = Color( 0.207843, 0.239216, 0.956863, 1 )
+polygon = PoolVector2Array( 0, 0, 256, 0, 256, 4, 0, 4 )
+
+[node name="RightBank" type="Polygon2D" parent="."]
+scale = Vector2( -1, 1 )
+color = Color( 0.145098, 0.54902, 0.2, 1 )
+offset = Vector2( -256, 0 )
+polygon = PoolVector2Array( 0, 0, 41, 0, 41, 4, 0, 4 )
+
+[node name="LeftBank" type="Polygon2D" parent="."]
+color = Color( 0.145098, 0.54902, 0.2, 1 )
+polygon = PoolVector2Array( 0, 0, 51, 0, 51, 4, 0, 4 )
+
