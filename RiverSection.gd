@@ -56,7 +56,24 @@ func updateBanks ():
 		$LeftBank.set("polygon", newPolygon)
 		newPolygon.set(1,Vector2(max(startWidth, 16) - startJitter, 0))
 		newPolygon.set(2,Vector2(max(endWidth, 16) - endJitter, 4))
-		$RightBank.set("polygon", newPolygon)
+		$RightBank/RightGrass.set("polygon", newPolygon)
+		var deltaWidth = newPolygon[1].x - newPolygon[2].x
+		var activeCollider
+		if abs(deltaWidth) < 3:
+			activeCollider = $RightBank/RightColl_I
+		elif deltaWidth > 0:
+			activeCollider = $RightBank/RightColl_L
+		else:
+			activeCollider = $RightBank/RightColl_R
+		activeCollider.position.x = newPolygon[1].x
+		$RightBank/RightColl_I.disabled = ($RightBank/RightColl_I != activeCollider) 
+		$RightBank/RightColl_L.disabled = ($RightBank/RightColl_L != activeCollider)
+		$RightBank/RightColl_R.disabled = ($RightBank/RightColl_R != activeCollider)		
+		$RightBank/RightColl_I.visible = ($RightBank/RightColl_I == activeCollider) 
+		$RightBank/RightColl_L.visible = ($RightBank/RightColl_L == activeCollider)
+		$RightBank/RightColl_R.visible = ($RightBank/RightColl_R == activeCollider)		
+		
+			
 	if has_node("Island"):
 		if startWidth <= 0 && endWidth <= 0:
 			newPolygon = $Island.polygon
@@ -68,3 +85,4 @@ func updateBanks ():
 			$Island.visible = true
 		else:
 			$Island.visible = false
+			

@@ -17,6 +17,7 @@ color = Color( 0.145098, 0.54902, 0.2, 1 )
 polygon = PoolVector2Array( 0, 0, 51, 0, 51, 4, 0, 4 )
 
 [node name="Island" type="Polygon2D" parent="."]
+visible = false
 position = Vector2( 128, 0 )
 color = Color( 0.145098, 0.54902, 0.2, 1 )
 polygon = PoolVector2Array( -10, 0, 10, 0, 10, 4, -10, 4 )
@@ -31,15 +32,22 @@ color = Color( 0.145098, 0.54902, 0.2, 1 )
 polygon = PoolVector2Array( 0, 0, 41, 0, 41, 4, 0, 4 )
 
 [node name="RightColl_I" type="CollisionPolygon2D" parent="RightBank"]
-polygon = PoolVector2Array( 4, 0, 12, 0, 12, 4, 4, 4 )
+position = Vector2( 41, 0 )
+polygon = PoolVector2Array( -8, 0, 0, 0, 0, 4, -8, 4 )
 
 [node name="RightColl_L" type="CollisionPolygon2D" parent="RightBank"]
-polygon = PoolVector2Array( 7, 0, 15, 0, 9, 4, 1, 4 )
+visible = false
+position = Vector2( 41, 0 )
+polygon = PoolVector2Array( -8, 0, 0, 0, -6, 4, -14, 4 )
+disabled = true
 
 [node name="RightColl_R" type="CollisionPolygon2D" parent="RightBank"]
-polygon = PoolVector2Array( 1, 0, 9, 0, 15, 4, 7, 4 )
+visible = false
+polygon = PoolVector2Array( -8, 0, 0, 0, 7, 4, 0, 4 )
+disabled = true
 
 [node name="RightEdge" type="Sprite" parent="RightBank"]
+visible = false
 texture = ExtResource( 2 )
 centered = false
 vframes = 5
