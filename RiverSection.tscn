@@ -5,16 +5,10 @@
 
 [node name="RiverSection" type="Node2D"]
 script = ExtResource( 1 )
-startWidth = 46.0
-endWidth = 46.0
 
 [node name="River" type="Polygon2D" parent="."]
 color = Color( 0.207843, 0.239216, 0.956863, 1 )
 polygon = PoolVector2Array( 0, 0, 256, 0, 256, 4, 0, 4 )
-
-[node name="LeftBank" type="Polygon2D" parent="."]
-color = Color( 0.145098, 0.54902, 0.2, 1 )
-polygon = PoolVector2Array( 0, 0, 51, 0, 51, 4, 0, 4 )
 
 [node name="Island" type="Polygon2D" parent="."]
 visible = false
@@ -27,29 +21,59 @@ position = Vector2( 256, 0 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 
-[node name="RightGrass" type="Polygon2D" parent="RightBank"]
+[node name="Grass" type="Polygon2D" parent="RightBank"]
 color = Color( 0.145098, 0.54902, 0.2, 1 )
-polygon = PoolVector2Array( 0, 0, 41, 0, 41, 4, 0, 4 )
+polygon = PoolVector2Array( 0, 0, 25, 0, 35, 4, 0, 4 )
 
-[node name="RightColl_I" type="CollisionPolygon2D" parent="RightBank"]
+[node name="Coll_I" type="CollisionPolygon2D" parent="RightBank"]
+visible = false
 position = Vector2( 41, 0 )
 polygon = PoolVector2Array( -8, 0, 0, 0, 0, 4, -8, 4 )
+disabled = true
 
-[node name="RightColl_L" type="CollisionPolygon2D" parent="RightBank"]
+[node name="Coll_L" type="CollisionPolygon2D" parent="RightBank"]
 visible = false
 position = Vector2( 41, 0 )
 polygon = PoolVector2Array( -8, 0, 0, 0, -6, 4, -14, 4 )
 disabled = true
 
-[node name="RightColl_R" type="CollisionPolygon2D" parent="RightBank"]
-visible = false
+[node name="Coll_R" type="CollisionPolygon2D" parent="RightBank"]
+position = Vector2( 25, 0 )
 polygon = PoolVector2Array( -8, 0, 0, 0, 7, 4, 0, 4 )
-disabled = true
 
-[node name="RightEdge" type="Sprite" parent="RightBank"]
+[node name="Edge" type="Sprite" parent="RightBank"]
 visible = false
 texture = ExtResource( 2 )
 centered = false
 vframes = 5
 frame = 4
 
+[node name="LeftBank" type="StaticBody2D" parent="."]
+
+[node name="Grass" type="Polygon2D" parent="LeftBank"]
+color = Color( 0.145098, 0.54902, 0.2, 1 )
+polygon = PoolVector2Array( 0, 0, 35, 0, 45, 4, 0, 4 )
+
+[node name="Coll_I" type="CollisionPolygon2D" parent="LeftBank"]
+visible = false
+polygon = PoolVector2Array( -8, 0, 0, 0, 0, 4, -8, 4 )
+disabled = true
+
+[node name="Coll_L" type="CollisionPolygon2D" parent="LeftBank"]
+visible = false
+polygon = PoolVector2Array( -8, 0, 0, 0, -6, 4, -14, 4 )
+disabled = true
+
+[node name="Coll_R" type="CollisionPolygon2D" parent="LeftBank"]
+position = Vector2( 35, 0 )
+polygon = PoolVector2Array( -8, 0, 0, 0, 7, 4, 0, 4 )
+
+[node name="Edge" type="Sprite" parent="LeftBank"]
+visible = false
+position = Vector2( 256, 0 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 2 )
+centered = false
+vframes = 5
+frame = 4

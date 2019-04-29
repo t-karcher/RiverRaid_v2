@@ -16,6 +16,6 @@ func _ready():
 		visible = false
 
 func _notification(what):
-	if is_inside_tree():
+	if is_inside_tree() && (what == NOTIFICATION_TRANSFORM_CHANGED):
 		position.y = origY
-		get_tree().call_group("River", "updateWidth")
+		get_tree().call_group("River", "updateWidth", self)

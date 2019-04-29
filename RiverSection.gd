@@ -18,8 +18,8 @@ var percOfMarker1
 func _ready():
 	add_to_group("River")
 
-func updateWidth():
-	if is_instance_valid(widthMarker1) && is_instance_valid(widthMarker2):
+func updateWidth(caller):
+	if caller in [widthMarker1, widthMarker2]:
 		var w1 = widthMarker1.position.x
 		var w2 = widthMarker2.position.x
 		var w1w = (w1 * percOfMarker1 + w2 * (100 - percOfMarker1)) / 100
@@ -50,29 +50,25 @@ func setEndWidth (newVal):
 func updateBanks ():
 	var newPolygon
 	if has_node("LeftBank"):
-		newPolygon = $LeftBank.polygon
+		newPolygon = $LeftBank/Grass.polygon
 		newPolygon.set(1,Vector2(max(startWidth, 16) + startJitter, 0))
 		newPolygon.set(2,Vector2(max(endWidth, 16) + endJitter, 4))
-		$LeftBank.set("polygon", newPolygon)
+		$LeftBank/Grass.set("polygon", newPolygon)
 		newPolygon.set(1,Vector2(max(startWidth, 16) - startJitter, 0))
 		newPolygon.set(2,Vector2(max(endWidth, 16) - endJitter, 4))
-		$RightBank/RightGrass.set("polygon", newPolygon)
-		var deltaWidth = newPolygon[1].x - newPolygon[2].x
+		$RightBank/Grass.set("polygon", newPolygon)
 		var activeCollider
-		if abs(deltaWidth) < 3:
-			activeCollider = $RightBank/RightColl_I
-		elif deltaWidth > 0:
-			activeCollider = $RightBank/RightColl_L
-		else:
-			activeCollider = $RightBank/RightColl_R
-		activeCollider.position.x = newPolygon[1].x
-		$RightBank/RightColl_I.disabled = ($RightBank/RightColl_I != activeCollider) 
-		$RightBank/RightColl_L.disabled = ($RightBank/RightColl_L != activeCollider)
-		$RightBank/RightColl_R.disabled = ($RightBank/RightColl_R != activeCollider)		
-		$RightBank/RightColl_I.visible = ($RightBank/RightColl_I == activeCollider) 
-		$RightBank/RightColl_L.visible = ($RightBank/RightColl_L == activeCollider)
-		$RightBank/RightColl_R.visible = ($RightBank/RightColl_R == activeCollider)		
-		
+		for b in [$RightBank, $LeftBank]:
+			var deltaWidth = b.get_node("Grass").polygon[1].x - b.get_node("Grass").polygon[2].x
+			if abs(deltaWidth) < 3:
+				activeCollider = b.get_node("Coll_I")
+			else:
+				activeCollider = b.get_node("Coll_L" if deltaWidth > 0 else "Coll_R")
+			activeCollider.position.x = b.get_node("Grass").polygon[1].x
+			for n in b.get_children():
+				if n.get_class() == "CollisionPolygon2D":
+					n.disabled = (n != activeCollider) 
+					n.visible = (n == activeCollider)
 			
 	if has_node("Island"):
 		if startWidth <= 0 && endWidth <= 0:
