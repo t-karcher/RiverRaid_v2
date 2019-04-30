@@ -48,37 +48,36 @@ func setEndWidth (newVal):
 	updateBanks()
 
 func updateBanks ():
-	var newPolygon
 	if has_node("LeftBank"):
-		newPolygon = $LeftBank/Grass.polygon
-		newPolygon.set(1,Vector2(max(startWidth, 16) + startJitter, 0))
-		newPolygon.set(2,Vector2(max(endWidth, 16) + endJitter, 4))
-		$LeftBank/Grass.set("polygon", newPolygon)
-		newPolygon.set(1,Vector2(max(startWidth, 16) - startJitter, 0))
-		newPolygon.set(2,Vector2(max(endWidth, 16) - endJitter, 4))
-		$RightBank/Grass.set("polygon", newPolygon)
-		var activeCollider
+		var p = $LeftBank/Grass.polygon
+		p.set(1,Vector2(max(startWidth, 16) + startJitter, 0))
+		p.set(2,Vector2(max(endWidth, 16) + endJitter, 4))
+		$LeftBank/Grass.set("polygon", p)
+		p.set(1,Vector2(max(startWidth, 16) - startJitter, 0))
+		p.set(2,Vector2(max(endWidth, 16) - endJitter, 4))
+		$RightBank/Grass.set("polygon", p)
 		for b in [$RightBank, $LeftBank]:
-			var deltaWidth = b.get_node("Grass").polygon[1].x - b.get_node("Grass").polygon[2].x
-			if abs(deltaWidth) < 3:
-				activeCollider = b.get_node("Coll_I")
-			else:
-				activeCollider = b.get_node("Coll_L" if deltaWidth > 0 else "Coll_R")
-			activeCollider.position.x = b.get_node("Grass").polygon[1].x
-			for n in b.get_children():
-				if n.get_class() == "CollisionPolygon2D":
-					n.disabled = (n != activeCollider) 
-					n.visible = (n == activeCollider)
+			var s = b.get_node("Grass").polygon
+			s.set(0, Vector2(s[1].x-6,0))
+			s.set(3, Vector2(s[2].x-6,4))
+			b.get_node("Collider").set("polygon", s)
 			
 	if has_node("Island"):
 		if startWidth <= 0 && endWidth <= 0:
-			newPolygon = $Island.polygon
-			newPolygon.set(0, Vector2(startWidth + startJitter, 0))
-			newPolygon.set(1, Vector2(-startWidth + startJitter, 0))
-			newPolygon.set(2, Vector2(-endWidth + endJitter, 4))
-			newPolygon.set(3, Vector2(endWidth + endJitter, 4))
-			$Island.set("polygon", newPolygon)
+			var p = $Island/Grass.polygon
+			p.set(0, Vector2(startWidth + startJitter, 0))
+			p.set(1, Vector2(-startWidth + startJitter, 0))
+			p.set(2, Vector2(-endWidth + endJitter, 4))
+			p.set(3, Vector2(endWidth + endJitter, 4))
+			$Island/Grass.set("polygon", p)
 			$Island.visible = true
+			p.set(0, Vector2(p[1].x-6,0))
+			p.set(3, Vector2(p[2].x-6,4))
+			$Island/RightCollider.set("polygon", p)
+			p = $Island/Grass.polygon
+			p.set(1, Vector2(p[0].x+6,0))
+			p.set(2, Vector2(p[3].x+6,4))
+			$Island/LeftCollider.set("polygon", p)		
 		else:
 			$Island.visible = false
 			

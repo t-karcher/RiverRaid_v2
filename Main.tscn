@@ -27,386 +27,380 @@ position = Vector2( 0, 4 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-endJitter = -5
+endJitter = -1
 
 [node name="RiverSection3" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 8 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = -5
-endJitter = 0
+startJitter = -1
+endJitter = -2
 
 [node name="RiverSection4" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 12 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = 0
-endJitter = 1
+startJitter = -2
+endJitter = -4
 
 [node name="RiverSection5" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 16 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = 1
-endJitter = -4
+startJitter = -4
+endJitter = 0
 
 [node name="RiverSection6" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 20 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = -4
-endJitter = -5
+startJitter = 0
+endJitter = -3
 
 [node name="RiverSection7" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 24 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = -5
-endJitter = -1
+startJitter = -3
+endJitter = -3
 
 [node name="RiverSection8" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 28 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = -1
-endJitter = -2
+startJitter = -3
+endJitter = 0
 
 [node name="RiverSection9" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 32 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = -2
-endJitter = -5
+startJitter = 0
+endJitter = 0
 
 [node name="RiverSection10" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 36 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = -5
-endJitter = -3
+startJitter = 0
+endJitter = 3
 
 [node name="RiverSection11" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 40 )
 script = ExtResource( 2 )
 startWidth = 38.5
-endWidth = 29.1474
-startJitter = -3
-endJitter = -4
+endWidth = 31.5662
+startJitter = 3
+endJitter = 2
 
 [node name="RiverSection12" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 44 )
 script = ExtResource( 2 )
-startWidth = 29.1474
-endWidth = 19.7948
-startJitter = -4
-endJitter = -3
+startWidth = 31.5662
+endWidth = 24.6325
+startJitter = 2
+endJitter = 3
 
 [node name="RiverSection13" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 48 )
 script = ExtResource( 2 )
-startWidth = 19.7948
-endWidth = 10.4423
-startJitter = -3
-endJitter = 2
+startWidth = 24.6325
+endWidth = 17.6987
+startJitter = 3
+endJitter = 4
 
 [node name="RiverSection14" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 52 )
 script = ExtResource( 2 )
-startWidth = 10.4423
-endWidth = 1.08969
-startJitter = 2
-endJitter = 2
+startWidth = 17.6987
+endWidth = 10.7649
+startJitter = 4
+endJitter = -2
 
 [node name="RiverSection15" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 56 )
 script = ExtResource( 2 )
-startWidth = 1.08969
-endWidth = -8.26289
-startJitter = 2
-endJitter = -1
+startWidth = 10.7649
+endWidth = 3.83116
+startJitter = -2
+endJitter = 3
 
 [node name="RiverSection16" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 60 )
 script = ExtResource( 2 )
-startWidth = -8.26289
-endWidth = -17.6155
-startJitter = -1
-endJitter = 2
+startWidth = 3.83116
+endWidth = -3.10261
+startJitter = 3
+endJitter = 3
 
 [node name="RiverSection17" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 64 )
 script = ExtResource( 2 )
-startWidth = -17.6155
-endWidth = -26.9681
-startJitter = 2
+startWidth = -3.10261
+endWidth = -10.0364
+startJitter = 3
+endJitter = 2
 
 [node name="RiverSection18" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 68 )
 script = ExtResource( 2 )
-startWidth = -26.9681
-endWidth = -36.3206
-endJitter = 0
+startWidth = -10.0364
+endWidth = -16.9701
+startJitter = 2
+endJitter = -5
 
 [node name="RiverSection19" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 72 )
 script = ExtResource( 2 )
-startWidth = -36.3206
-endWidth = -45.6732
-startJitter = 0
-endJitter = -2
+startWidth = -16.9701
+endWidth = -23.9039
+startJitter = -5
+endJitter = 0
 
 [node name="RiverSection20" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 76 )
 script = ExtResource( 2 )
-startWidth = -45.6732
-endWidth = -55.0258
-startJitter = -2
-endJitter = -4
+startWidth = -23.9039
+endWidth = -30.8377
+startJitter = 0
+endJitter = 2
 
 [node name="RiverSection21" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 80 )
 script = ExtResource( 2 )
-startWidth = -55.0258
-endWidth = -51.3868
-startJitter = -4
-endJitter = -2
+startWidth = -30.8377
+endWidth = -32.1566
+startJitter = 2
+endJitter = 1
 
 [node name="RiverSection22" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 84 )
 script = ExtResource( 2 )
-startWidth = -51.3868
-endWidth = -47.7478
-startJitter = -2
-endJitter = 4
+startWidth = -32.1566
+endWidth = -33.4755
+startJitter = 1
+endJitter = 2
 
 [node name="RiverSection23" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 88 )
 script = ExtResource( 2 )
-startWidth = -47.7478
-endWidth = -44.1088
-startJitter = 4
+startWidth = -33.4755
+endWidth = -34.7944
+startJitter = 2
 endJitter = 4
 
 [node name="RiverSection24" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 92 )
 script = ExtResource( 2 )
-startWidth = -44.1088
-endWidth = -40.4698
+startWidth = -34.7944
+endWidth = -36.1134
 startJitter = 4
-endJitter = -5
+endJitter = -3
 
 [node name="RiverSection25" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 96 )
 script = ExtResource( 2 )
-startWidth = -40.4698
-endWidth = -36.8308
-startJitter = -5
-endJitter = -5
+startWidth = -36.1134
+endWidth = -37.4323
+startJitter = -3
+endJitter = 3
 
 [node name="RiverSection26" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 100 )
 script = ExtResource( 2 )
-startWidth = -36.8308
-endWidth = -33.1918
-startJitter = -5
-endJitter = 2
+startWidth = -37.4323
+endWidth = -38.7512
+startJitter = 3
+endJitter = 0
 
 [node name="RiverSection27" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 104 )
 script = ExtResource( 2 )
-startWidth = -33.1918
-endWidth = -29.5528
-startJitter = 2
-endJitter = -5
+startWidth = -38.7512
+endWidth = -40.0701
+startJitter = 0
+endJitter = 2
 
 [node name="RiverSection28" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 108 )
 script = ExtResource( 2 )
-startWidth = -29.5528
-endWidth = -25.9138
-startJitter = -5
-endJitter = -4
+startWidth = -40.0701
+endWidth = -41.3891
+startJitter = 2
+endJitter = -5
 
 [node name="RiverSection29" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 112 )
 script = ExtResource( 2 )
-startWidth = -25.9138
-endWidth = -22.2747
-startJitter = -4
-endJitter = 4
+startWidth = -41.3891
+endWidth = -42.708
+startJitter = -5
+endJitter = 1
 
 [node name="RiverSection30" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 116 )
 script = ExtResource( 2 )
-startWidth = -22.2747
-endWidth = -18.6357
-startJitter = 4
+startWidth = -42.708
+endWidth = -44.0269
+startJitter = 1
 endJitter = -1
 
 [node name="RiverSection31" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 120 )
 script = ExtResource( 2 )
-startWidth = -18.6357
-endWidth = -12.9222
+startWidth = -44.0269
+endWidth = -41.8036
 startJitter = -1
-endJitter = -2
+endJitter = -1
 
 [node name="RiverSection32" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 124 )
 script = ExtResource( 2 )
-startWidth = -12.9222
-endWidth = -7.20859
-startJitter = -2
-endJitter = 1
+startWidth = -41.8036
+endWidth = -39.5802
+startJitter = -1
+endJitter = -3
 
 [node name="RiverSection33" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 128 )
 script = ExtResource( 2 )
-startWidth = -7.20859
-endWidth = -1.49502
-startJitter = 1
-endJitter = 2
+startWidth = -39.5802
+endWidth = -37.3569
+startJitter = -3
 
 [node name="RiverSection34" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 132 )
 script = ExtResource( 2 )
-startWidth = -1.49502
-endWidth = 4.21855
-startJitter = 2
+startWidth = -37.3569
+endWidth = -35.1336
 endJitter = 1
 
 [node name="RiverSection35" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 136 )
 script = ExtResource( 2 )
-startWidth = 4.21855
-endWidth = 9.93213
+startWidth = -35.1336
+endWidth = -32.9103
 startJitter = 1
-endJitter = 2
+endJitter = -4
 
 [node name="RiverSection36" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 140 )
 script = ExtResource( 2 )
-startWidth = 9.93213
-endWidth = 15.6457
-startJitter = 2
-endJitter = -2
+startWidth = -32.9103
+endWidth = -30.6869
+startJitter = -4
+endJitter = 3
 
 [node name="RiverSection37" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 144 )
 script = ExtResource( 2 )
-startWidth = 15.6457
-endWidth = 21.3593
-startJitter = -2
-endJitter = -1
+startWidth = -30.6869
+endWidth = -28.4636
+startJitter = 3
+endJitter = 1
 
 [node name="RiverSection38" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 148 )
 script = ExtResource( 2 )
-startWidth = 21.3593
-endWidth = 27.0729
-startJitter = -1
-endJitter = -3
+startWidth = -28.4636
+endWidth = -26.2403
+startJitter = 1
+endJitter = -2
 
 [node name="RiverSection39" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 152 )
 script = ExtResource( 2 )
-startWidth = 27.0729
-endWidth = 32.7864
-startJitter = -3
-endJitter = 4
+startWidth = -26.2403
+endWidth = -24.017
+startJitter = -2
 
 [node name="RiverSection40" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 156 )
 script = ExtResource( 2 )
-startWidth = 32.7864
-endWidth = 38.5
-startJitter = 4
-endJitter = -3
+startWidth = -24.017
+endWidth = -21.7936
+endJitter = -5
 
 [node name="RiverSection41" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 160 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -3
-endJitter = 3
+startWidth = -21.7936
+endWidth = -15.7643
+startJitter = -5
+endJitter = -1
 
 [node name="RiverSection42" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 164 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 3
-endJitter = -5
+startWidth = -15.7643
+endWidth = -9.73491
+startJitter = -1
 
 [node name="RiverSection43" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 168 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -5
-endJitter = -1
+startWidth = -9.73491
+endWidth = -3.70554
+endJitter = -5
 
 [node name="RiverSection44" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 172 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -1
-endJitter = 2
+startWidth = -3.70554
+endWidth = 2.32382
+startJitter = -5
+endJitter = 0
 
 [node name="RiverSection45" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 176 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 2
-endJitter = 2
+startWidth = 2.32382
+endWidth = 8.35318
+startJitter = 0
+endJitter = 4
 
 [node name="RiverSection46" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 180 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 2
-endJitter = 4
+startWidth = 8.35318
+endWidth = 14.3825
+startJitter = 4
+endJitter = 1
 
 [node name="RiverSection47" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 184 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 4
-endJitter = 1
+startWidth = 14.3825
+endWidth = 20.4119
+startJitter = 1
 
 [node name="RiverSection48" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 188 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 1
-endJitter = 3
+startWidth = 20.4119
+endWidth = 26.4413
+endJitter = 2
 
 [node name="RiverSection49" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 192 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 3
+startWidth = 26.4413
+endWidth = 32.4706
+startJitter = 2
 endJitter = 3
 
 [node name="RiverSection50" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 196 )
 script = ExtResource( 2 )
-startWidth = 38.5
+startWidth = 32.4706
 endWidth = 38.5
 startJitter = 3
 endJitter = -4
@@ -415,290 +409,290 @@ endJitter = -4
 position = Vector2( 0, 200 )
 script = ExtResource( 2 )
 startWidth = 38.5
-endWidth = 41.7031
+endWidth = 43.0597
 startJitter = -4
-endJitter = -1
+endJitter = -5
 
 [node name="RiverSection52" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 204 )
 script = ExtResource( 2 )
-startWidth = 41.7031
-endWidth = 44.9062
-startJitter = -1
-endJitter = 0
+startWidth = 43.0597
+endWidth = 47.6194
+startJitter = -5
+endJitter = -5
 
 [node name="RiverSection53" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 208 )
 script = ExtResource( 2 )
-startWidth = 44.9062
-endWidth = 48.1093
-startJitter = 0
-endJitter = -1
+startWidth = 47.6194
+endWidth = 52.1791
+startJitter = -5
+endJitter = 4
 
 [node name="RiverSection54" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 212 )
 script = ExtResource( 2 )
-startWidth = 48.1093
-endWidth = 51.3124
-startJitter = -1
-endJitter = 4
+startWidth = 52.1791
+endWidth = 56.7388
+startJitter = 4
+endJitter = 3
 
 [node name="RiverSection55" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 216 )
 script = ExtResource( 2 )
-startWidth = 51.3124
-endWidth = 54.5155
-startJitter = 4
-endJitter = -3
+startWidth = 56.7388
+endWidth = 61.2985
+startJitter = 3
+endJitter = 4
 
 [node name="RiverSection56" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 220 )
 script = ExtResource( 2 )
-startWidth = 54.5155
-endWidth = 57.7186
-startJitter = -3
+startWidth = 61.2985
+endWidth = 65.8582
+startJitter = 4
+endJitter = -4
 
 [node name="RiverSection57" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 224 )
 script = ExtResource( 2 )
-startWidth = 57.7186
-endWidth = 60.9217
-endJitter = 1
+startWidth = 65.8582
+endWidth = 70.4179
+startJitter = -4
+endJitter = 4
 
 [node name="RiverSection58" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 228 )
 script = ExtResource( 2 )
-startWidth = 60.9217
-endWidth = 64.1248
-startJitter = 1
-endJitter = 4
+startWidth = 70.4179
+endWidth = 74.9776
+startJitter = 4
+endJitter = 1
 
 [node name="RiverSection59" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 232 )
 script = ExtResource( 2 )
-startWidth = 64.1248
-endWidth = 67.3279
-startJitter = 4
-endJitter = -1
+startWidth = 74.9776
+endWidth = 79.5374
+startJitter = 1
 
 [node name="RiverSection60" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 236 )
 script = ExtResource( 2 )
-startWidth = 67.3279
-endWidth = 70.531
-startJitter = -1
-endJitter = -2
+startWidth = 79.5374
+endWidth = 84.0971
+endJitter = 2
 
 [node name="RiverSection61" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 240 )
 script = ExtResource( 2 )
-startWidth = 70.531
-endWidth = 68.3142
-startJitter = -2
-endJitter = -1
+startWidth = 84.0971
+endWidth = 79.5374
+startJitter = 2
+endJitter = -2
 
 [node name="RiverSection62" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 244 )
 script = ExtResource( 2 )
-startWidth = 68.3142
-endWidth = 66.0973
-startJitter = -1
-endJitter = 2
+startWidth = 79.5374
+endWidth = 74.9776
+startJitter = -2
+endJitter = 0
 
 [node name="RiverSection63" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 248 )
 script = ExtResource( 2 )
-startWidth = 66.0973
-endWidth = 63.8805
-startJitter = 2
-endJitter = -4
+startWidth = 74.9776
+endWidth = 70.4179
+startJitter = 0
+endJitter = -3
 
 [node name="RiverSection64" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 252 )
 script = ExtResource( 2 )
-startWidth = 63.8805
-endWidth = 61.6637
-startJitter = -4
-endJitter = 2
+startWidth = 70.4179
+endWidth = 65.8582
+startJitter = -3
+endJitter = -3
 
 [node name="RiverSection65" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 256 )
 script = ExtResource( 2 )
-startWidth = 61.6637
-endWidth = 59.4469
-startJitter = 2
+startWidth = 65.8582
+endWidth = 61.2985
+startJitter = -3
 endJitter = -3
 
 [node name="RiverSection66" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 260 )
 script = ExtResource( 2 )
-startWidth = 59.4469
-endWidth = 57.23
+startWidth = 61.2985
+endWidth = 56.7388
 startJitter = -3
+endJitter = -2
 
 [node name="RiverSection67" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 264 )
 script = ExtResource( 2 )
-startWidth = 57.23
-endWidth = 55.0132
-endJitter = -4
+startWidth = 56.7388
+endWidth = 52.1791
+startJitter = -2
+endJitter = -5
 
 [node name="RiverSection68" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 268 )
 script = ExtResource( 2 )
-startWidth = 55.0132
-endWidth = 52.7964
-startJitter = -4
-endJitter = -2
+startWidth = 52.1791
+endWidth = 47.6194
+startJitter = -5
+endJitter = 2
 
 [node name="RiverSection69" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 272 )
 script = ExtResource( 2 )
-startWidth = 52.7964
-endWidth = 50.5795
-startJitter = -2
-endJitter = -4
+startWidth = 47.6194
+endWidth = 43.0597
+startJitter = 2
 
 [node name="RiverSection70" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 276 )
 script = ExtResource( 2 )
-startWidth = 50.5795
-endWidth = 48.3627
-startJitter = -4
-endJitter = -5
+startWidth = 43.0597
+endWidth = 38.5
+endJitter = -3
 
 [node name="RiverSection71" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 280 )
 script = ExtResource( 2 )
-startWidth = 48.3627
-endWidth = 47.3764
-startJitter = -5
-endJitter = -4
+startWidth = 38.5
+endWidth = 38.5
+startJitter = -3
+endJitter = -5
 
 [node name="RiverSection72" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 284 )
 script = ExtResource( 2 )
-startWidth = 47.3764
-endWidth = 46.3902
-startJitter = -4
-endJitter = -3
+startWidth = 38.5
+endWidth = 38.5
+startJitter = -5
+endJitter = -5
 
 [node name="RiverSection73" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 288 )
 script = ExtResource( 2 )
-startWidth = 46.3902
-endWidth = 45.4039
-startJitter = -3
-endJitter = 3
+startWidth = 38.5
+endWidth = 38.5
+startJitter = -5
+endJitter = -5
 
 [node name="RiverSection74" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 292 )
 script = ExtResource( 2 )
-startWidth = 45.4039
-endWidth = 44.4176
-startJitter = 3
-endJitter = 3
+startWidth = 38.5
+endWidth = 38.5
+startJitter = -5
+endJitter = 2
 
 [node name="RiverSection75" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 296 )
 script = ExtResource( 2 )
-startWidth = 44.4176
-endWidth = 43.4314
-startJitter = 3
-endJitter = 4
+startWidth = 38.5
+endWidth = 38.5
+startJitter = 2
+endJitter = -4
 
 [node name="RiverSection76" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 300 )
 script = ExtResource( 2 )
-startWidth = 43.4314
-endWidth = 42.4451
-startJitter = 4
-endJitter = 1
+startWidth = 38.5
+endWidth = 38.5
+startJitter = -4
+endJitter = 3
 
 [node name="RiverSection77" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 304 )
 script = ExtResource( 2 )
-startWidth = 42.4451
-endWidth = 41.4588
-startJitter = 1
-endJitter = -4
+startWidth = 38.5
+endWidth = 38.5
+startJitter = 3
+endJitter = 2
 
 [node name="RiverSection78" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 308 )
 script = ExtResource( 2 )
-startWidth = 41.4588
-endWidth = 40.4725
-startJitter = -4
-endJitter = 0
+startWidth = 38.5
+endWidth = 38.5
+startJitter = 2
+endJitter = 1
 
 [node name="RiverSection79" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 312 )
 script = ExtResource( 2 )
-startWidth = 40.4725
-endWidth = 39.4863
-startJitter = 0
+startWidth = 38.5
+endWidth = 38.5
+startJitter = 1
+endJitter = -3
 
 [node name="RiverSection80" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 316 )
 script = ExtResource( 2 )
-startWidth = 39.4863
+startWidth = 38.5
 endWidth = 38.5
-endJitter = -5
+startJitter = -3
+endJitter = 1
 
 [node name="RiverSection81" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 320 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = -5
-endJitter = -3
+startJitter = 1
+endJitter = -5
 
 [node name="RiverSection82" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 324 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = -3
-endJitter = -2
+startJitter = -5
+endJitter = 2
 
 [node name="RiverSection83" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 328 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = -2
-endJitter = 2
+startJitter = 2
+endJitter = -5
 
 [node name="RiverSection84" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 332 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = 2
-endJitter = -4
+startJitter = -5
+endJitter = 0
 
 [node name="RiverSection85" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 336 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = -4
-endJitter = 2
+startJitter = 0
 
 [node name="RiverSection86" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 340 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = 2
-endJitter = -4
+endJitter = 4
 
 [node name="RiverSection87" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 344 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = -4
+startJitter = 4
 endJitter = 3
 
 [node name="RiverSection88" type="Node2D" parent="Level" instance=ExtResource( 1 )]
@@ -707,22 +701,22 @@ script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
 startJitter = 3
-endJitter = 3
+endJitter = -2
 
 [node name="RiverSection89" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 352 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = 3
-endJitter = 4
+startJitter = -2
+endJitter = 3
 
 [node name="RiverSection90" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 356 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = 4
+startJitter = 3
 endJitter = -4
 
 [node name="RiverSection91" type="Node2D" parent="Level" instance=ExtResource( 1 )]
@@ -731,14 +725,14 @@ script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
 startJitter = -4
-endJitter = 2
+endJitter = -2
 
 [node name="RiverSection92" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 364 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = 2
+startJitter = -2
 endJitter = -3
 
 [node name="RiverSection93" type="Node2D" parent="Level" instance=ExtResource( 1 )]
@@ -747,63 +741,59 @@ script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
 startJitter = -3
-endJitter = -2
+endJitter = -5
 
 [node name="RiverSection94" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 372 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = -2
-endJitter = -2
+startJitter = -5
+endJitter = -5
 
 [node name="RiverSection95" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 376 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = -2
-endJitter = -1
+startJitter = -5
 
 [node name="RiverSection96" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 380 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = -1
-endJitter = -3
+endJitter = -2
 
 [node name="RiverSection97" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 384 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = -3
-endJitter = -4
+startJitter = -2
 
 [node name="RiverSection98" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 388 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = -4
-endJitter = -3
+endJitter = 1
 
 [node name="RiverSection99" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 392 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = -3
-endJitter = -3
+startJitter = 1
+endJitter = -2
 
 [node name="RiverSection100" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 396 )
 script = ExtResource( 2 )
 startWidth = 38.5
 endWidth = 38.5
-startJitter = -3
-endJitter = -3
+startJitter = -2
+endJitter = 4
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 128, 0 )
@@ -839,17 +829,17 @@ script = ExtResource( 6 )
 origY = 40
 
 [node name="WidthMarker3" type="Position2D" parent="LevelEditor" instance=ExtResource( 5 )]
-position = Vector2( -55.0258, 80 )
+position = Vector2( -30.8377, 80 )
 script = ExtResource( 6 )
 origY = 80
 
 [node name="WidthMarker4" type="Position2D" parent="LevelEditor" instance=ExtResource( 5 )]
-position = Vector2( -18.6357, 120 )
+position = Vector2( -44.0269, 120 )
 script = ExtResource( 6 )
 origY = 120
 
 [node name="WidthMarker5" type="Position2D" parent="LevelEditor" instance=ExtResource( 5 )]
-position = Vector2( 38.5, 160 )
+position = Vector2( -21.7936, 160 )
 script = ExtResource( 6 )
 origY = 160
 
@@ -859,12 +849,12 @@ script = ExtResource( 6 )
 origY = 200
 
 [node name="WidthMarker7" type="Position2D" parent="LevelEditor" instance=ExtResource( 5 )]
-position = Vector2( 70.531, 240 )
+position = Vector2( 84.0971, 240 )
 script = ExtResource( 6 )
 origY = 240
 
 [node name="WidthMarker8" type="Position2D" parent="LevelEditor" instance=ExtResource( 5 )]
-position = Vector2( 48.3627, 280 )
+position = Vector2( 38.5, 280 )
 script = ExtResource( 6 )
 origY = 280
 
