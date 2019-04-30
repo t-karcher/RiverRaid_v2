@@ -26,7 +26,7 @@ func deleteAll():
 	for n in get_scene().get_node("LevelEditor").get_children():
 		get_scene().get_node("LevelEditor").remove_child(n)
 		n.free()
-		
+
 func addRiverSections():
 	var startWidth = 50
 	var endWidth = 50

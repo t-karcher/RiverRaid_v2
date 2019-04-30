@@ -6,13 +6,9 @@ export (int) var endWidth = 40 setget setEndWidth
 export (int) var startJitter = 5 setget setStartJitter
 export (int) var endJitter = 5 setget setEndJitter
 
-var widthMarker1
-var widthMarker2
-var percOfMarker1
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export (NodePath) var widthMarker1
+export (NodePath) var widthMarker2
+export (int) var percOfMarker1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,10 +22,6 @@ func updateWidth(caller):
 		var w2w = (w1 * (percOfMarker1 - 10) + w2 * (110 - percOfMarker1)) / 100
 		setStartWidth (w1w)
 		setEndWidth (w2w)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass 
 
 func setStartJitter (newVal):
 	startJitter = newVal
@@ -47,6 +39,8 @@ func setEndWidth (newVal):
 	endWidth = newVal
 	updateBanks()
 
+# Update position of grass and colliders
+# based on the nearest width markers
 func updateBanks ():
 	if has_node("LeftBank"):
 		var p = $LeftBank/Grass.polygon

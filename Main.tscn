@@ -11,792 +11,1292 @@
 radius = 3.5
 height = 7.0
 
-[node name="Node2D" type="Node2D"]
+[node name="River Raid" type="Node2D"]
+position = Vector2( 0, 648 )
 scale = Vector2( 4, -4 )
 
 [node name="Level" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="RiverSection" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
+startWidth = 84.4739
+endWidth = 84.0594
 startJitter = 0
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.4739, 0 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":0)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+percOfMarker1 = 100
 
 [node name="RiverSection2" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 4 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-endJitter = -1
+startWidth = 84.0594
+endWidth = 83.6449
+endJitter = 3
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.4739, 0 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":0)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+percOfMarker1 = 90
 
 [node name="RiverSection3" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 8 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -1
-endJitter = -2
+startWidth = 83.6449
+endWidth = 83.2303
+startJitter = 3
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.4739, 0 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":0)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+percOfMarker1 = 80
 
 [node name="RiverSection4" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 12 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -2
-endJitter = -4
+startWidth = 83.2303
+endWidth = 82.8158
+endJitter = 2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.4739, 0 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":0)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+percOfMarker1 = 70
 
 [node name="RiverSection5" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 16 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -4
-endJitter = 0
+startWidth = 82.8158
+endWidth = 82.4013
+startJitter = 2
+endJitter = -1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.4739, 0 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":0)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+percOfMarker1 = 60
 
 [node name="RiverSection6" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 20 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 0
-endJitter = -3
+startWidth = 82.4013
+endWidth = 81.9868
+startJitter = -1
+endJitter = -2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.4739, 0 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":0)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+percOfMarker1 = 50
 
 [node name="RiverSection7" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 24 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -3
-endJitter = -3
+startWidth = 81.9868
+endWidth = 81.5723
+startJitter = -2
+endJitter = -4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.4739, 0 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":0)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+percOfMarker1 = 40
 
 [node name="RiverSection8" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 28 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -3
-endJitter = 0
+startWidth = 81.5723
+endWidth = 81.1577
+startJitter = -4
+endJitter = 1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.4739, 0 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":0)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+percOfMarker1 = 30
 
 [node name="RiverSection9" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 32 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 0
-endJitter = 0
+startWidth = 81.1577
+endWidth = 80.7432
+startJitter = 1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.4739, 0 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":0)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+percOfMarker1 = 20
 
 [node name="RiverSection10" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 36 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 0
-endJitter = 3
+startWidth = 80.7432
+endWidth = 80.3287
+endJitter = -3
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.4739, 0 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":0)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+percOfMarker1 = 10
 
 [node name="RiverSection11" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 40 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 31.5662
-startJitter = 3
-endJitter = 2
+startWidth = 80.3287
+endWidth = 78.2561
+startJitter = -3
+endJitter = -2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+percOfMarker1 = 100
 
 [node name="RiverSection12" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 44 )
 script = ExtResource( 2 )
-startWidth = 31.5662
-endWidth = 24.6325
-startJitter = 2
-endJitter = 3
+startWidth = 78.2561
+endWidth = 76.1835
+startJitter = -2
+endJitter = -2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+percOfMarker1 = 90
 
 [node name="RiverSection13" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 48 )
 script = ExtResource( 2 )
-startWidth = 24.6325
-endWidth = 17.6987
-startJitter = 3
-endJitter = 4
+startWidth = 76.1835
+endWidth = 74.1109
+startJitter = -2
+endJitter = 0
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+percOfMarker1 = 80
 
 [node name="RiverSection14" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 52 )
 script = ExtResource( 2 )
-startWidth = 17.6987
-endWidth = 10.7649
-startJitter = 4
-endJitter = -2
+startWidth = 74.1109
+endWidth = 72.0383
+startJitter = 0
+endJitter = 3
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+percOfMarker1 = 70
 
 [node name="RiverSection15" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 56 )
 script = ExtResource( 2 )
-startWidth = 10.7649
-endWidth = 3.83116
-startJitter = -2
-endJitter = 3
+startWidth = 72.0383
+endWidth = 69.9657
+startJitter = 3
+endJitter = 2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+percOfMarker1 = 60
 
 [node name="RiverSection16" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 60 )
 script = ExtResource( 2 )
-startWidth = 3.83116
-endWidth = -3.10261
-startJitter = 3
-endJitter = 3
+startWidth = 69.9657
+endWidth = 67.8932
+startJitter = 2
+endJitter = 1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+percOfMarker1 = 50
 
 [node name="RiverSection17" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 64 )
 script = ExtResource( 2 )
-startWidth = -3.10261
-endWidth = -10.0364
-startJitter = 3
-endJitter = 2
+startWidth = 67.8932
+endWidth = 65.8206
+startJitter = 1
+endJitter = -1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+percOfMarker1 = 40
 
 [node name="RiverSection18" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 68 )
 script = ExtResource( 2 )
-startWidth = -10.0364
-endWidth = -16.9701
-startJitter = 2
-endJitter = -5
+startWidth = 65.8206
+endWidth = 63.748
+startJitter = -1
+endJitter = -2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+percOfMarker1 = 30
 
 [node name="RiverSection19" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 72 )
 script = ExtResource( 2 )
-startWidth = -16.9701
-endWidth = -23.9039
-startJitter = -5
-endJitter = 0
+startWidth = 63.748
+endWidth = 61.6754
+startJitter = -2
+endJitter = 4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+percOfMarker1 = 20
 
 [node name="RiverSection20" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 76 )
 script = ExtResource( 2 )
-startWidth = -23.9039
-endWidth = -30.8377
-startJitter = 0
-endJitter = 2
+startWidth = 61.6754
+endWidth = 59.6028
+startJitter = 4
+endJitter = -2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 80.3287, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":40)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+percOfMarker1 = 10
 
 [node name="RiverSection21" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 80 )
 script = ExtResource( 2 )
-startWidth = -30.8377
-endWidth = -32.1566
-startJitter = 2
-endJitter = 1
+startWidth = 59.6028
+endWidth = 53.1589
+startJitter = -2
+endJitter = -2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+percOfMarker1 = 100
 
 [node name="RiverSection22" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 84 )
 script = ExtResource( 2 )
-startWidth = -32.1566
-endWidth = -33.4755
-startJitter = 1
-endJitter = 2
+startWidth = 53.1589
+endWidth = 46.715
+startJitter = -2
+endJitter = -1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+percOfMarker1 = 90
 
 [node name="RiverSection23" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 88 )
 script = ExtResource( 2 )
-startWidth = -33.4755
-endWidth = -34.7944
-startJitter = 2
-endJitter = 4
+startWidth = 46.715
+endWidth = 40.2711
+startJitter = -1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+percOfMarker1 = 80
 
 [node name="RiverSection24" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 92 )
 script = ExtResource( 2 )
-startWidth = -34.7944
-endWidth = -36.1134
-startJitter = 4
-endJitter = -3
+startWidth = 40.2711
+endWidth = 33.8273
+endJitter = 4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+percOfMarker1 = 70
 
 [node name="RiverSection25" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 96 )
 script = ExtResource( 2 )
-startWidth = -36.1134
-endWidth = -37.4323
-startJitter = -3
-endJitter = 3
+startWidth = 33.8273
+endWidth = 27.3834
+startJitter = 4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+percOfMarker1 = 60
 
 [node name="RiverSection26" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 100 )
 script = ExtResource( 2 )
-startWidth = -37.4323
-endWidth = -38.7512
-startJitter = 3
-endJitter = 0
+startWidth = 27.3834
+endWidth = 20.9395
+endJitter = -3
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+percOfMarker1 = 50
 
 [node name="RiverSection27" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 104 )
 script = ExtResource( 2 )
-startWidth = -38.7512
-endWidth = -40.0701
-startJitter = 0
-endJitter = 2
+startWidth = 20.9395
+endWidth = 14.4956
+startJitter = -3
+endJitter = -2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+percOfMarker1 = 40
 
 [node name="RiverSection28" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 108 )
 script = ExtResource( 2 )
-startWidth = -40.0701
-endWidth = -41.3891
-startJitter = 2
-endJitter = -5
+startWidth = 14.4956
+endWidth = 8.05172
+startJitter = -2
+endJitter = 4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+percOfMarker1 = 30
 
 [node name="RiverSection29" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 112 )
 script = ExtResource( 2 )
-startWidth = -41.3891
-endWidth = -42.708
-startJitter = -5
+startWidth = 8.05172
+endWidth = 1.60784
+startJitter = 4
 endJitter = 1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+percOfMarker1 = 20
 
 [node name="RiverSection30" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 116 )
 script = ExtResource( 2 )
-startWidth = -42.708
-endWidth = -44.0269
+startWidth = 1.60784
+endWidth = -4.83605
 startJitter = 1
-endJitter = -1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 59.6028, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":80)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+percOfMarker1 = 10
 
 [node name="RiverSection31" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 120 )
 script = ExtResource( 2 )
-startWidth = -44.0269
-endWidth = -41.8036
-startJitter = -1
-endJitter = -1
+startWidth = -4.83605
+endWidth = -8.71745
+endJitter = -4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+percOfMarker1 = 100
 
 [node name="RiverSection32" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 124 )
 script = ExtResource( 2 )
-startWidth = -41.8036
-endWidth = -39.5802
-startJitter = -1
-endJitter = -3
+startWidth = -8.71745
+endWidth = -12.5989
+startJitter = -4
+endJitter = 0
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+percOfMarker1 = 90
 
 [node name="RiverSection33" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 128 )
 script = ExtResource( 2 )
-startWidth = -39.5802
-endWidth = -37.3569
-startJitter = -3
+startWidth = -12.5989
+endWidth = -16.4803
+startJitter = 0
+endJitter = -1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+percOfMarker1 = 80
 
 [node name="RiverSection34" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 132 )
 script = ExtResource( 2 )
-startWidth = -37.3569
-endWidth = -35.1336
-endJitter = 1
+startWidth = -16.4803
+endWidth = -20.3617
+startJitter = -1
+endJitter = 2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+percOfMarker1 = 70
 
 [node name="RiverSection35" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 136 )
 script = ExtResource( 2 )
-startWidth = -35.1336
-endWidth = -32.9103
-startJitter = 1
-endJitter = -4
+startWidth = -20.3617
+endWidth = -24.2431
+startJitter = 2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+percOfMarker1 = 60
 
 [node name="RiverSection36" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 140 )
 script = ExtResource( 2 )
-startWidth = -32.9103
-endWidth = -30.6869
-startJitter = -4
-endJitter = 3
+startWidth = -24.2431
+endWidth = -28.1245
+endJitter = -4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+percOfMarker1 = 50
 
 [node name="RiverSection37" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 144 )
 script = ExtResource( 2 )
-startWidth = -30.6869
-endWidth = -28.4636
-startJitter = 3
-endJitter = 1
+startWidth = -28.1245
+endWidth = -32.0059
+startJitter = -4
+endJitter = -5
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+percOfMarker1 = 40
 
 [node name="RiverSection38" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 148 )
 script = ExtResource( 2 )
-startWidth = -28.4636
-endWidth = -26.2403
-startJitter = 1
+startWidth = -32.0059
+endWidth = -35.8873
+startJitter = -5
 endJitter = -2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+percOfMarker1 = 30
 
 [node name="RiverSection39" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 152 )
 script = ExtResource( 2 )
-startWidth = -26.2403
-endWidth = -24.017
+startWidth = -35.8873
+endWidth = -39.7687
 startJitter = -2
+endJitter = -4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+percOfMarker1 = 20
 
 [node name="RiverSection40" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 156 )
 script = ExtResource( 2 )
-startWidth = -24.017
-endWidth = -21.7936
-endJitter = -5
+startWidth = -39.7687
+endWidth = -43.6501
+startJitter = -4
+endJitter = -3
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4.83605, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":120)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+percOfMarker1 = 10
 
 [node name="RiverSection41" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 160 )
 script = ExtResource( 2 )
-startWidth = -21.7936
-endWidth = -15.7643
-startJitter = -5
-endJitter = -1
+startWidth = -43.6501
+endWidth = -43.6877
+startJitter = -3
+endJitter = 1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+percOfMarker1 = 100
 
 [node name="RiverSection42" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 164 )
 script = ExtResource( 2 )
-startWidth = -15.7643
-endWidth = -9.73491
-startJitter = -1
+startWidth = -43.6877
+endWidth = -43.7254
+startJitter = 1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+percOfMarker1 = 90
 
 [node name="RiverSection43" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 168 )
 script = ExtResource( 2 )
-startWidth = -9.73491
-endWidth = -3.70554
+startWidth = -43.7254
+endWidth = -43.7631
 endJitter = -5
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+percOfMarker1 = 80
 
 [node name="RiverSection44" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 172 )
 script = ExtResource( 2 )
-startWidth = -3.70554
-endWidth = 2.32382
+startWidth = -43.7631
+endWidth = -43.8008
 startJitter = -5
-endJitter = 0
+endJitter = -3
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+percOfMarker1 = 70
 
 [node name="RiverSection45" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 176 )
 script = ExtResource( 2 )
-startWidth = 2.32382
-endWidth = 8.35318
-startJitter = 0
-endJitter = 4
+startWidth = -43.8008
+endWidth = -43.8385
+startJitter = -3
+endJitter = -1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+percOfMarker1 = 60
 
 [node name="RiverSection46" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 180 )
 script = ExtResource( 2 )
-startWidth = 8.35318
-endWidth = 14.3825
-startJitter = 4
-endJitter = 1
+startWidth = -43.8385
+endWidth = -43.8762
+startJitter = -1
+endJitter = 4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+percOfMarker1 = 50
 
 [node name="RiverSection47" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 184 )
 script = ExtResource( 2 )
-startWidth = 14.3825
-endWidth = 20.4119
-startJitter = 1
+startWidth = -43.8762
+endWidth = -43.9139
+startJitter = 4
+endJitter = 3
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+percOfMarker1 = 40
 
 [node name="RiverSection48" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 188 )
 script = ExtResource( 2 )
-startWidth = 20.4119
-endWidth = 26.4413
-endJitter = 2
+startWidth = -43.9139
+endWidth = -43.9515
+startJitter = 3
+endJitter = -1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+percOfMarker1 = 30
 
 [node name="RiverSection49" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 192 )
 script = ExtResource( 2 )
-startWidth = 26.4413
-endWidth = 32.4706
-startJitter = 2
-endJitter = 3
+startWidth = -43.9515
+endWidth = -43.9892
+startJitter = -1
+endJitter = -3
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+percOfMarker1 = 20
 
 [node name="RiverSection50" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 196 )
 script = ExtResource( 2 )
-startWidth = 32.4706
-endWidth = 38.5
-startJitter = 3
-endJitter = -4
+startWidth = -43.9892
+endWidth = -44.0269
+startJitter = -3
+endJitter = 1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -43.6501, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":160)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+percOfMarker1 = 10
 
 [node name="RiverSection51" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 200 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 43.0597
-startJitter = -4
-endJitter = -5
+startWidth = -44.0269
+endWidth = -35.7742
+startJitter = 1
+endJitter = 4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+percOfMarker1 = 100
 
 [node name="RiverSection52" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 204 )
 script = ExtResource( 2 )
-startWidth = 43.0597
-endWidth = 47.6194
-startJitter = -5
-endJitter = -5
+startWidth = -35.7742
+endWidth = -27.5215
+startJitter = 4
+endJitter = -1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+percOfMarker1 = 90
 
 [node name="RiverSection53" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 208 )
 script = ExtResource( 2 )
-startWidth = 47.6194
-endWidth = 52.1791
-startJitter = -5
-endJitter = 4
+startWidth = -27.5215
+endWidth = -19.2688
+startJitter = -1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+percOfMarker1 = 80
 
 [node name="RiverSection54" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 212 )
 script = ExtResource( 2 )
-startWidth = 52.1791
-endWidth = 56.7388
-startJitter = 4
-endJitter = 3
+startWidth = -19.2688
+endWidth = -11.0161
+endJitter = -4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+percOfMarker1 = 70
 
 [node name="RiverSection55" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 216 )
 script = ExtResource( 2 )
-startWidth = 56.7388
-endWidth = 61.2985
-startJitter = 3
-endJitter = 4
+startWidth = -11.0161
+endWidth = -2.76345
+startJitter = -4
+endJitter = 0
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+percOfMarker1 = 60
 
 [node name="RiverSection56" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 220 )
 script = ExtResource( 2 )
-startWidth = 61.2985
-endWidth = 65.8582
-startJitter = 4
-endJitter = -4
+startWidth = -2.76345
+endWidth = 5.48924
+startJitter = 0
+endJitter = -5
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+percOfMarker1 = 50
 
 [node name="RiverSection57" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 224 )
 script = ExtResource( 2 )
-startWidth = 65.8582
-endWidth = 70.4179
-startJitter = -4
-endJitter = 4
+startWidth = 5.48924
+endWidth = 13.7419
+startJitter = -5
+endJitter = -2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+percOfMarker1 = 40
 
 [node name="RiverSection58" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 228 )
 script = ExtResource( 2 )
-startWidth = 70.4179
-endWidth = 74.9776
-startJitter = 4
-endJitter = 1
+startWidth = 13.7419
+endWidth = 21.9946
+startJitter = -2
+endJitter = 4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+percOfMarker1 = 30
 
 [node name="RiverSection59" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 232 )
 script = ExtResource( 2 )
-startWidth = 74.9776
-endWidth = 79.5374
-startJitter = 1
+startWidth = 21.9946
+endWidth = 30.2473
+startJitter = 4
+endJitter = 3
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+percOfMarker1 = 20
 
 [node name="RiverSection60" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 236 )
 script = ExtResource( 2 )
-startWidth = 79.5374
-endWidth = 84.0971
-endJitter = 2
+startWidth = 30.2473
+endWidth = 38.5
+startJitter = 3
+endJitter = 0
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -44.0269, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":200)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+percOfMarker1 = 10
 
 [node name="RiverSection61" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 240 )
 script = ExtResource( 2 )
-startWidth = 84.0971
-endWidth = 79.5374
-startJitter = 2
-endJitter = -2
+startWidth = 38.5
+endWidth = 39.7059
+startJitter = 0
+endJitter = -3
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+percOfMarker1 = 100
 
 [node name="RiverSection62" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 244 )
 script = ExtResource( 2 )
-startWidth = 79.5374
-endWidth = 74.9776
-startJitter = -2
-endJitter = 0
+startWidth = 39.7059
+endWidth = 40.9117
+startJitter = -3
+endJitter = 2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+percOfMarker1 = 90
 
 [node name="RiverSection63" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 248 )
 script = ExtResource( 2 )
-startWidth = 74.9776
-endWidth = 70.4179
-startJitter = 0
-endJitter = -3
+startWidth = 40.9117
+endWidth = 42.1176
+startJitter = 2
+endJitter = -5
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+percOfMarker1 = 80
 
 [node name="RiverSection64" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 252 )
 script = ExtResource( 2 )
-startWidth = 70.4179
-endWidth = 65.8582
-startJitter = -3
-endJitter = -3
+startWidth = 42.1176
+endWidth = 43.3235
+startJitter = -5
+endJitter = -1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+percOfMarker1 = 70
 
 [node name="RiverSection65" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 256 )
 script = ExtResource( 2 )
-startWidth = 65.8582
-endWidth = 61.2985
-startJitter = -3
-endJitter = -3
+startWidth = 43.3235
+endWidth = 44.5294
+startJitter = -1
+endJitter = 1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+percOfMarker1 = 60
 
 [node name="RiverSection66" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 260 )
 script = ExtResource( 2 )
-startWidth = 61.2985
-endWidth = 56.7388
-startJitter = -3
-endJitter = -2
+startWidth = 44.5294
+endWidth = 45.7352
+startJitter = 1
+endJitter = 3
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+percOfMarker1 = 50
 
 [node name="RiverSection67" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 264 )
 script = ExtResource( 2 )
-startWidth = 56.7388
-endWidth = 52.1791
-startJitter = -2
-endJitter = -5
+startWidth = 45.7352
+endWidth = 46.9411
+startJitter = 3
+endJitter = -2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+percOfMarker1 = 40
 
 [node name="RiverSection68" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 268 )
 script = ExtResource( 2 )
-startWidth = 52.1791
-endWidth = 47.6194
-startJitter = -5
-endJitter = 2
+startWidth = 46.9411
+endWidth = 48.147
+startJitter = -2
+endJitter = 4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+percOfMarker1 = 30
 
 [node name="RiverSection69" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 272 )
 script = ExtResource( 2 )
-startWidth = 47.6194
-endWidth = 43.0597
-startJitter = 2
+startWidth = 48.147
+endWidth = 49.3529
+startJitter = 4
+endJitter = 4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+percOfMarker1 = 20
 
 [node name="RiverSection70" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 276 )
 script = ExtResource( 2 )
-startWidth = 43.0597
-endWidth = 38.5
-endJitter = -3
+startWidth = 49.3529
+endWidth = 50.5587
+startJitter = 4
+endJitter = 4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":240)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+percOfMarker1 = 10
 
 [node name="RiverSection71" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 280 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -3
-endJitter = -5
+startWidth = 50.5587
+endWidth = 51.5762
+startJitter = 4
+endJitter = 2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+percOfMarker1 = 100
 
 [node name="RiverSection72" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 284 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -5
-endJitter = -5
+startWidth = 51.5762
+endWidth = 52.5936
+startJitter = 2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+percOfMarker1 = 90
 
 [node name="RiverSection73" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 288 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -5
+startWidth = 52.5936
+endWidth = 53.6111
 endJitter = -5
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+percOfMarker1 = 80
 
 [node name="RiverSection74" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 292 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
+startWidth = 53.6111
+endWidth = 54.6286
 startJitter = -5
-endJitter = 2
+endJitter = 4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+percOfMarker1 = 70
 
 [node name="RiverSection75" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 296 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 2
-endJitter = -4
+startWidth = 54.6286
+endWidth = 55.646
+startJitter = 4
+endJitter = -2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+percOfMarker1 = 60
 
 [node name="RiverSection76" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 300 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -4
-endJitter = 3
+startWidth = 55.646
+endWidth = 56.6635
+startJitter = -2
+endJitter = 1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+percOfMarker1 = 50
 
 [node name="RiverSection77" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 304 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 3
-endJitter = 2
+startWidth = 56.6635
+endWidth = 57.6809
+startJitter = 1
+endJitter = -4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+percOfMarker1 = 40
 
 [node name="RiverSection78" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 308 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 2
-endJitter = 1
+startWidth = 57.6809
+endWidth = 58.6984
+startJitter = -4
+endJitter = 3
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+percOfMarker1 = 30
 
 [node name="RiverSection79" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 312 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 1
-endJitter = -3
+startWidth = 58.6984
+endWidth = 59.7158
+startJitter = 3
+endJitter = 4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+percOfMarker1 = 20
 
 [node name="RiverSection80" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 316 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -3
-endJitter = 1
+startWidth = 59.7158
+endWidth = 60.7333
+startJitter = 4
+endJitter = -2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 50.5587, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":280)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+percOfMarker1 = 10
 
 [node name="RiverSection81" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 320 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 1
-endJitter = -5
+startWidth = 60.7333
+endWidth = 60.2434
+startJitter = -2
+endJitter = -2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+percOfMarker1 = 100
 
 [node name="RiverSection82" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 324 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -5
-endJitter = 2
+startWidth = 60.2434
+endWidth = 59.7535
+startJitter = -2
+endJitter = 1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+percOfMarker1 = 90
 
 [node name="RiverSection83" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 328 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 2
-endJitter = -5
+startWidth = 59.7535
+endWidth = 59.2636
+startJitter = 1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+percOfMarker1 = 80
 
 [node name="RiverSection84" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 332 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -5
-endJitter = 0
+startWidth = 59.2636
+endWidth = 58.7737
+endJitter = -3
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+percOfMarker1 = 70
 
 [node name="RiverSection85" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 336 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 0
+startWidth = 58.7737
+endWidth = 58.2839
+startJitter = -3
+endJitter = -3
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+percOfMarker1 = 60
 
 [node name="RiverSection86" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 340 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-endJitter = 4
+startWidth = 58.2839
+endWidth = 57.794
+startJitter = -3
+endJitter = 2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+percOfMarker1 = 50
 
 [node name="RiverSection87" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 344 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 4
-endJitter = 3
+startWidth = 57.794
+endWidth = 57.3041
+startJitter = 2
+endJitter = -4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+percOfMarker1 = 40
 
 [node name="RiverSection88" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 348 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 3
-endJitter = -2
+startWidth = 57.3041
+endWidth = 56.8142
+startJitter = -4
+endJitter = 3
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+percOfMarker1 = 30
 
 [node name="RiverSection89" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 352 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -2
-endJitter = 3
+startWidth = 56.8142
+endWidth = 56.3243
+startJitter = 3
+endJitter = -2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+percOfMarker1 = 20
 
 [node name="RiverSection90" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 356 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 3
-endJitter = -4
+startWidth = 56.3243
+endWidth = 55.8344
+startJitter = -2
+endJitter = 4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 60.7333, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":320)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+percOfMarker1 = 10
 
 [node name="RiverSection91" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 360 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -4
-endJitter = -2
+startWidth = 55.8344
+endWidth = 54.101
+startJitter = 4
+endJitter = -4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":400)
+
+percOfMarker1 = 100
 
 [node name="RiverSection92" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 364 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -2
-endJitter = -3
+startWidth = 54.101
+endWidth = 52.3675
+startJitter = -4
+endJitter = 1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":400)
+
+percOfMarker1 = 90
 
 [node name="RiverSection93" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 368 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -3
-endJitter = -5
+startWidth = 52.3675
+endWidth = 50.6341
+startJitter = 1
+endJitter = 2
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":400)
+
+percOfMarker1 = 80
 
 [node name="RiverSection94" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 372 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -5
-endJitter = -5
+startWidth = 50.6341
+endWidth = 48.9007
+startJitter = 2
+endJitter = 4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":400)
+
+percOfMarker1 = 70
 
 [node name="RiverSection95" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 376 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -5
+startWidth = 48.9007
+endWidth = 47.1672
+startJitter = 4
+endJitter = -4
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":400)
+
+percOfMarker1 = 60
 
 [node name="RiverSection96" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 380 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-endJitter = -2
+startWidth = 47.1672
+endWidth = 45.4338
+startJitter = -4
+endJitter = 1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":400)
+
+percOfMarker1 = 50
 
 [node name="RiverSection97" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 384 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = -2
+startWidth = 45.4338
+endWidth = 43.7003
+startJitter = 1
+endJitter = -5
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":400)
+
+percOfMarker1 = 40
 
 [node name="RiverSection98" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 388 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-endJitter = 1
+startWidth = 43.7003
+endWidth = 41.9669
+startJitter = -5
+endJitter = -1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":400)
+
+percOfMarker1 = 30
 
 [node name="RiverSection99" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 392 )
 script = ExtResource( 2 )
-startWidth = 38.5
-endWidth = 38.5
-startJitter = 1
-endJitter = -2
+startWidth = 41.9669
+endWidth = 40.2334
+startJitter = -1
+endJitter = 3
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":400)
+
+percOfMarker1 = 20
 
 [node name="RiverSection100" type="Node2D" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 396 )
 script = ExtResource( 2 )
-startWidth = 38.5
+startWidth = 40.2334
 endWidth = 38.5
-startJitter = -2
-endJitter = 4
+startJitter = 3
+endJitter = -1
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 55.8344, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":360)
+
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 38.5, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":ExtResource( 6 ),"origY":400)
+
+percOfMarker1 = 10
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 128, 0 )
+position = Vector2( 128, 12 )
 scale = Vector2( 1, -1 )
 script = ExtResource( 3 )
 __meta__ = {
@@ -813,58 +1313,62 @@ region_rect = Rect2( 0, 0, 16, 20 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2( 0, -220 )
 current = true
 drag_margin_left = 1.0
+drag_margin_top = 0.0
 drag_margin_right = 1.0
+drag_margin_bottom = 0.0
 
 [node name="LevelEditor" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="WidthMarker" type="Position2D" parent="LevelEditor" instance=ExtResource( 5 )]
-position = Vector2( 38.5, 0 )
+position = Vector2( 84.4739, 0 )
 script = ExtResource( 6 )
 
 [node name="WidthMarker2" type="Position2D" parent="LevelEditor" instance=ExtResource( 5 )]
-position = Vector2( 38.5, 40 )
+position = Vector2( 80.3287, 40 )
 script = ExtResource( 6 )
 origY = 40
 
 [node name="WidthMarker3" type="Position2D" parent="LevelEditor" instance=ExtResource( 5 )]
-position = Vector2( -30.8377, 80 )
+position = Vector2( 59.6028, 80 )
 script = ExtResource( 6 )
 origY = 80
 
 [node name="WidthMarker4" type="Position2D" parent="LevelEditor" instance=ExtResource( 5 )]
-position = Vector2( -44.0269, 120 )
+position = Vector2( -4.83605, 120 )
 script = ExtResource( 6 )
 origY = 120
 
 [node name="WidthMarker5" type="Position2D" parent="LevelEditor" instance=ExtResource( 5 )]
-position = Vector2( -21.7936, 160 )
+position = Vector2( -43.6501, 160 )
 script = ExtResource( 6 )
 origY = 160
 
 [node name="WidthMarker6" type="Position2D" parent="LevelEditor" instance=ExtResource( 5 )]
-position = Vector2( 38.5, 200 )
+position = Vector2( -44.0269, 200 )
 script = ExtResource( 6 )
 origY = 200
 
 [node name="WidthMarker7" type="Position2D" parent="LevelEditor" instance=ExtResource( 5 )]
-position = Vector2( 84.0971, 240 )
+position = Vector2( 38.5, 240 )
 script = ExtResource( 6 )
 origY = 240
 
 [node name="WidthMarker8" type="Position2D" parent="LevelEditor" instance=ExtResource( 5 )]
-position = Vector2( 38.5, 280 )
+position = Vector2( 50.5587, 280 )
 script = ExtResource( 6 )
 origY = 280
 
 [node name="WidthMarker9" type="Position2D" parent="LevelEditor" instance=ExtResource( 5 )]
-position = Vector2( 38.5, 320 )
+position = Vector2( 60.7333, 320 )
 script = ExtResource( 6 )
 origY = 320
 
 [node name="WidthMarker10" type="Position2D" parent="LevelEditor" instance=ExtResource( 5 )]
-position = Vector2( 38.5, 360 )
+position = Vector2( 55.8344, 360 )
 script = ExtResource( 6 )
 origY = 360
 
@@ -872,3 +1376,10 @@ origY = 360
 position = Vector2( 38.5, 400 )
 script = ExtResource( 6 )
 origY = 400
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="HUD"]
+position = Vector2( 0, 648 )
+color = Color( 0.568627, 0.568627, 0.568627, 1 )
+polygon = PoolVector2Array( 0, 0, 1024, 0, 1024, 120, 0, 120 )
