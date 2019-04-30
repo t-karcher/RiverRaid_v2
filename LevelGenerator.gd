@@ -16,8 +16,9 @@ func _ready():
 #	pass
 
 func _run():
-	deleteAll()
-	addRiverSections()
+	reconnectMarkers()
+	#deleteAll()
+	#addRiverSections()
 
 func deleteAll():
 	for n in get_scene().get_node("Level").get_children():
@@ -26,6 +27,16 @@ func deleteAll():
 	for n in get_scene().get_node("LevelEditor").get_children():
 		get_scene().get_node("LevelEditor").remove_child(n)
 		n.free()
+
+func reconnectMarkers():
+	var m = get_scene().get_node("LevelEditor")
+	for i in range(0,m.get_child_count()-1):
+		var m1 = m.get_child(i)
+		var m2 = m.get_child(i+1)
+		for j in range (i*10, i*10+10):
+			get_scene().get_node("Level").get_child(j).widthMarker1 = m1
+			get_scene().get_node("Level").get_child(j).widthMarker2 = m2
+			
 
 func addRiverSections():
 	var startWidth = 50
