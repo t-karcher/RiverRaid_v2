@@ -12,10 +12,10 @@ color = Color( 0.207843, 0.239216, 0.956863, 1 )
 polygon = PoolVector2Array( 0, 0, 256, 0, 256, 4, 0, 4 )
 
 [node name="RightBank" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 256, 0 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
+collision_mask = 6
 
 [node name="Grass" type="Polygon2D" parent="RightBank"]
 color = Color( 0.145098, 0.54902, 0.2, 1 )
@@ -32,6 +32,7 @@ frame = 4
 polygon = PoolVector2Array( 17, 0, 23, 0, 35, 4, 29, 4 )
 
 [node name="LeftBank" type="StaticBody2D" parent="."]
+collision_mask = 6
 
 [node name="Grass" type="Polygon2D" parent="LeftBank"]
 color = Color( 0.145098, 0.54902, 0.2, 1 )
@@ -53,6 +54,7 @@ polygon = PoolVector2Array( 31, 0, 37, 0, 45, 4, 39, 4 )
 [node name="Island" type="StaticBody2D" parent="."]
 visible = false
 position = Vector2( 128, 0 )
+collision_mask = 6
 
 [node name="Grass" type="Polygon2D" parent="Island"]
 color = Color( 0.145098, 0.54902, 0.2, 1 )

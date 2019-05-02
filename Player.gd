@@ -5,6 +5,7 @@ var isFillingUp = false
 const MOVE_SPEED = 200
 
 signal fuel_updated
+signal missile_shot
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,6 +21,8 @@ func _process(delta):
 	if Input.is_action_pressed("ui_right"):
 		$Body.frame = 1
 		move_and_collide(Vector2(MOVE_SPEED * delta,0))
+	if Input.is_action_pressed("ui_shoot"):
+		emit_signal("missile_shot", self.position)
 	if isFillingUp: changeFuel (10 * delta)
 
 func _on_Fuel_body_entered(body):
