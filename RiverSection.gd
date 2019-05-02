@@ -68,10 +68,13 @@ func updateBanks ():
 			p.set(0, Vector2(p[1].x-6,0))
 			p.set(3, Vector2(p[2].x-6,4))
 			$Island/RightCollider.set("polygon", p)
+			$Island/RightCollider.disabled = false
 			p = $Island/Grass.polygon
 			p.set(1, Vector2(p[0].x+6,0))
 			p.set(2, Vector2(p[3].x+6,4))
-			$Island/LeftCollider.set("polygon", p)		
+			$Island/LeftCollider.set("polygon", p)
+			$Island/LeftCollider.disabled = false
 		else:
 			$Island.visible = false
-			
+			$Island/LeftCollider.disabled = true
+			$Island/RightCollider.disabled = true

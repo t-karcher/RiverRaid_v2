@@ -3,6 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Restore marker assignments in all river sections 
 	if Engine.editor_hint:
 		var m = $LevelEditor
 		for i in range(0,m.get_child_count()-1):

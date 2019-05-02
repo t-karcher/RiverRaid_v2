@@ -16,7 +16,7 @@ func _ready():
 #	pass
 
 func _run():
-	reconnectMarkers()
+	fixStartJitter()
 	#deleteAll()
 	#addRiverSections()
 
@@ -37,6 +37,13 @@ func reconnectMarkers():
 			get_scene().get_node("Level").get_child(j).widthMarker1 = m1
 			get_scene().get_node("Level").get_child(j).widthMarker2 = m2
 			
+func fixStartJitter():
+	var m = get_scene().get_node("Level")
+	for i in range(0,m.get_child_count()-1):
+		var m1 = m.get_child(i)
+		var m2 = m.get_child(i+1)
+		m2.startJitter = m1.endJitter
+	
 
 func addRiverSections():
 	var startWidth = 50
