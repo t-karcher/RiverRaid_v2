@@ -18,7 +18,7 @@ func destroy():
 # (unless the old one is still visible) 
 func shootMissileFrom(playerPos):
 	if !visible:
-		set_position(Vector2(playerPos.x, playerPos.y + 12))
+		set_position(Vector2(playerPos.x, playerPos.y + 8))
 		show()
 		set_process(true)
 

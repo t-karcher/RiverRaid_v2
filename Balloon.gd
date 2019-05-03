@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed = 150
+var speed = 80
 
 func explode():
 	$Sprite/Animation.play("Explode")
@@ -12,6 +12,5 @@ func _process(delta):
 	if is_instance_valid(c):
 		if c.collider.name in ["RightBank", "LeftBank", "Island"]:
 			speed *= -1
-			$Sprite.flip_h = !$Sprite.flip_h
 		else:
 			explode()
