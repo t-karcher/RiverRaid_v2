@@ -3,9 +3,9 @@ extends KinematicBody2D
 var fuel = 100 setget changeFuel
 var isFillingUp = false
 const MOVE_SPEED = 200
+var shootMissileFrom: FuncRef
 
 signal fuel_updated
-signal missile_shot
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,11 +22,8 @@ func _process(delta):
 		$Body.frame = 1
 		move_and_collide(Vector2(MOVE_SPEED * delta,0))
 	if Input.is_action_pressed("ui_shoot"):
-		emit_signal("missile_shot", self.position)
+		shootMissileFrom.call_func(self.position)
 	if isFillingUp: changeFuel (10 * delta)
-
-func _on_Fuel_body_entered(body):
-	isFillingUp = true
 
 func changeFuel (diff):
 	if fuel <= 0:
@@ -38,6 +35,3 @@ func changeFuel (diff):
 
 func _on_FuelTicker_timeout():
 	if !isFillingUp: changeFuel (-2)
-
-func _on_Fuel_body_exited(body):
-	isFillingUp = false

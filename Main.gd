@@ -12,3 +12,6 @@ func _ready():
 			for j in range (i*10, i*10+10):
 				$Level.get_child(j).widthMarker1 = m1
 				$Level.get_child(j).widthMarker2 = m2
+	else:
+		# Connect the player node with the missile shooting function at the start of the game
+		$Player.shootMissileFrom = funcref($PlayerMissile, "shootMissileFrom")

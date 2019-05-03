@@ -1,22 +1,61 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://RiverSection.tscn" type="PackedScene" id=2]
-[ext_resource path="res://images/RRaid_Fuel.png" type="Texture" id=3]
-[ext_resource path="res://PlayerMissile.gd" type="Script" id=4]
-[ext_resource path="res://images/RRaid_Player.png" type="Texture" id=5]
-[ext_resource path="res://Player.gd" type="Script" id=6]
-[ext_resource path="res://WidthMarker.tscn" type="PackedScene" id=7]
-[ext_resource path="res://FuelDisplay.gd" type="Script" id=8]
-[ext_resource path="res://images/RRaid_FuelDisplay.png" type="Texture" id=9]
+[ext_resource path="res://Fuel.gd" type="Script" id=3]
+[ext_resource path="res://images/RRaid_Fuel.png" type="Texture" id=4]
+[ext_resource path="res://Ship.gd" type="Script" id=5]
+[ext_resource path="res://images/RRaid_Ship.png" type="Texture" id=6]
+[ext_resource path="res://PlayerMissile.gd" type="Script" id=7]
+[ext_resource path="res://images/RRaid_Player.png" type="Texture" id=8]
+[ext_resource path="res://Player.gd" type="Script" id=9]
+[ext_resource path="res://WidthMarker.tscn" type="PackedScene" id=10]
+[ext_resource path="res://FuelDisplay.gd" type="Script" id=11]
+[ext_resource path="res://images/RRaid_FuelDisplay.png" type="Texture" id=12]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="Animation" id=1]
+resource_name = "Explode"
+length = 0.5
+step = 0.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.101468, 0.201548, 0.303015, 0.404483 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 2, 1 ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 7, 12 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "Explode"
+length = 0.51
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 2, 1 ]
+}
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 16, 4 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1, 4 )
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 3.5
 height = 7.0
 
@@ -1225,71 +1264,79 @@ position = Vector2( 63.8424, 148.556 )
 scale = Vector2( 1, -1 )
 collision_layer = 2
 collision_mask = 7
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Objects/Fuel"]
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 vframes = 2
 hframes = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Fuel"]
-shape = SubResource( 1 )
+[node name="Animation" type="AnimationPlayer" parent="Objects/Fuel/Sprite"]
+anims/Explode = SubResource( 1 )
 
-[node name="Fuel2" type="Area2D" parent="Objects"]
-position = Vector2( 141.527, 273.138 )
+[node name="Collider" type="CollisionShape2D" parent="Objects/Fuel"]
+shape = SubResource( 2 )
+
+[node name="Ship" type="KinematicBody2D" parent="Objects"]
+position = Vector2( 94.6288, 204.92 )
 scale = Vector2( 1, -1 )
 collision_layer = 2
 collision_mask = 7
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Objects/Fuel2"]
-texture = ExtResource( 3 )
-vframes = 2
-hframes = 2
+[node name="Sprite" type="Sprite" parent="Objects/Ship"]
+texture = ExtResource( 6 )
+vframes = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Fuel2"]
-shape = SubResource( 1 )
+[node name="Animation" type="AnimationPlayer" parent="Objects/Ship/Sprite"]
+anims/Explode = SubResource( 5 )
+
+[node name="Collider" type="CollisionShape2D" parent="Objects/Ship"]
+shape = SubResource( 6 )
 
 [node name="PlayerMissile" type="KinematicBody2D" parent="."]
 position = Vector2( 128, 50 )
 collision_layer = 4
 collision_mask = 3
-script = ExtResource( 4 )
+script = ExtResource( 7 )
 
 [node name="Collider" type="CollisionShape2D" parent="PlayerMissile"]
 shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="PlayerMissile"]
 scale = Vector2( 1, -1 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 vframes = 3
 hframes = 3
 frame = 6
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="PlayerMissile"]
+rect = Rect2( -5, -5, 10, 10 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 128, 12 )
 scale = Vector2( 1, -1 )
 collision_layer = 4
 collision_mask = 3
-script = ExtResource( 6 )
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Body" type="Sprite" parent="Player"]
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 vframes = 3
 hframes = 3
 region_rect = Rect2( 0, 0, 16, 20 )
 
 [node name="Collider" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="Camera" type="Camera2D" parent="Player"]
 offset = Vector2( 0, -220 )
@@ -1305,46 +1352,46 @@ autostart = true
 [node name="LevelEditor" type="Node2D" parent="."]
 editor/display_folded = true
 
-[node name="WidthMarker" parent="LevelEditor" instance=ExtResource( 7 )]
+[node name="WidthMarker" parent="LevelEditor" instance=ExtResource( 10 )]
 position = Vector2( 84.4739, 0 )
 
-[node name="WidthMarker2" parent="LevelEditor" instance=ExtResource( 7 )]
+[node name="WidthMarker2" parent="LevelEditor" instance=ExtResource( 10 )]
 position = Vector2( 80.3287, 40 )
 origY = 40
 
-[node name="WidthMarker3" parent="LevelEditor" instance=ExtResource( 7 )]
+[node name="WidthMarker3" parent="LevelEditor" instance=ExtResource( 10 )]
 position = Vector2( 42.484, 80 )
 origY = 80
 
-[node name="WidthMarker4" parent="LevelEditor" instance=ExtResource( 7 )]
+[node name="WidthMarker4" parent="LevelEditor" instance=ExtResource( 10 )]
 position = Vector2( -33.5127, 120 )
 origY = 120
 
-[node name="WidthMarker5" parent="LevelEditor" instance=ExtResource( 7 )]
+[node name="WidthMarker5" parent="LevelEditor" instance=ExtResource( 10 )]
 position = Vector2( -34.3234, 160 )
 origY = 160
 
-[node name="WidthMarker6" parent="LevelEditor" instance=ExtResource( 7 )]
+[node name="WidthMarker6" parent="LevelEditor" instance=ExtResource( 10 )]
 position = Vector2( 32.5838, 200 )
 origY = 200
 
-[node name="WidthMarker7" parent="LevelEditor" instance=ExtResource( 7 )]
+[node name="WidthMarker7" parent="LevelEditor" instance=ExtResource( 10 )]
 position = Vector2( 23.9383, 240 )
 origY = 240
 
-[node name="WidthMarker8" parent="LevelEditor" instance=ExtResource( 7 )]
+[node name="WidthMarker8" parent="LevelEditor" instance=ExtResource( 10 )]
 position = Vector2( 31.5186, 280 )
 origY = 280
 
-[node name="WidthMarker9" parent="LevelEditor" instance=ExtResource( 7 )]
+[node name="WidthMarker9" parent="LevelEditor" instance=ExtResource( 10 )]
 position = Vector2( 63.51, 320 )
 origY = 320
 
-[node name="WidthMarker10" parent="LevelEditor" instance=ExtResource( 7 )]
+[node name="WidthMarker10" parent="LevelEditor" instance=ExtResource( 10 )]
 position = Vector2( 39.9677, 360 )
 origY = 360
 
-[node name="WidthMarker11" parent="LevelEditor" instance=ExtResource( 7 )]
+[node name="WidthMarker11" parent="LevelEditor" instance=ExtResource( 10 )]
 position = Vector2( 38.5, 400 )
 origY = 400
 
@@ -1359,7 +1406,7 @@ polygon = PoolVector2Array( 0, 0, 256, 0, 256, 30, 0, 30 )
 
 [node name="FuelDisplay" type="Node2D" parent="HUD/Background"]
 position = Vector2( 100, 20 )
-script = ExtResource( 8 )
+script = ExtResource( 11 )
 
 [node name="Marker" type="Polygon2D" parent="HUD/Background/FuelDisplay"]
 position = Vector2( -29, -3 )
@@ -1367,12 +1414,9 @@ color = Color( 1, 0.968627, 0.396078, 1 )
 polygon = PoolVector2Array( 0, 0, 4, 0, 4, 10, 0, 10 )
 
 [node name="Display" type="Sprite" parent="HUD/Background/FuelDisplay"]
-texture = ExtResource( 9 )
-[connection signal="body_entered" from="Objects/Fuel" to="Player" method="_on_Fuel_body_entered"]
-[connection signal="body_exited" from="Objects/Fuel" to="Player" method="_on_Fuel_body_exited"]
-[connection signal="body_entered" from="Objects/Fuel2" to="Player" method="_on_Fuel_body_entered"]
-[connection signal="body_exited" from="Objects/Fuel2" to="Player" method="_on_Fuel_body_exited"]
+texture = ExtResource( 12 )
+[connection signal="body_entered" from="Objects/Fuel" to="Objects/Fuel" method="_on_Fuel_body_entered"]
+[connection signal="body_exited" from="Objects/Fuel" to="Objects/Fuel" method="_on_Fuel_body_exited"]
 [connection signal="screen_exited" from="PlayerMissile/VisibilityNotifier2D" to="PlayerMissile" method="_on_VisibilityNotifier2D_screen_exited"]
 [connection signal="fuel_updated" from="Player" to="HUD/Background/FuelDisplay" method="_on_Player_fuel_updated"]
-[connection signal="missile_shot" from="Player" to="PlayerMissile" method="_on_Player_missile_shot"]
 [connection signal="timeout" from="Player/FuelTicker" to="Player" method="_on_FuelTicker_timeout"]
