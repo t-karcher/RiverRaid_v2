@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://RiverSection.tscn" type="PackedScene" id=2]
@@ -6,18 +6,26 @@
 [ext_resource path="res://images/RRaid_Fuel.png" type="Texture" id=4]
 [ext_resource path="res://Ship.gd" type="Script" id=5]
 [ext_resource path="res://images/RRaid_Ship.png" type="Texture" id=6]
-[ext_resource path="res://Balloon.gd" type="Script" id=7]
-[ext_resource path="res://images/RRaid_Balloon.png" type="Texture" id=8]
-[ext_resource path="res://Plane.gd" type="Script" id=9]
-[ext_resource path="res://images/RRaid_Plane.png" type="Texture" id=10]
-[ext_resource path="res://images/RRaid_Alps.png" type="Texture" id=11]
-[ext_resource path="res://images/RRaid_Bridge.png" type="Texture" id=12]
-[ext_resource path="res://PlayerMissile.gd" type="Script" id=13]
-[ext_resource path="res://images/RRaid_Player.png" type="Texture" id=14]
-[ext_resource path="res://Player.gd" type="Script" id=15]
-[ext_resource path="res://WidthMarker.tscn" type="PackedScene" id=16]
-[ext_resource path="res://FuelDisplay.gd" type="Script" id=17]
-[ext_resource path="res://images/RRaid_FuelDisplay.png" type="Texture" id=18]
+[ext_resource path="res://Helicopter.gd" type="Script" id=7]
+[ext_resource path="res://images/RRaid_Copter.png" type="Texture" id=8]
+[ext_resource path="res://Balloon.gd" type="Script" id=9]
+[ext_resource path="res://images/RRaid_Balloon.png" type="Texture" id=10]
+[ext_resource path="res://Plane.gd" type="Script" id=11]
+[ext_resource path="res://images/RRaid_Plane.png" type="Texture" id=12]
+[ext_resource path="res://images/RRaid_Alps.png" type="Texture" id=13]
+[ext_resource path="res://Bridge.gd" type="Script" id=14]
+[ext_resource path="res://images/RRaid_Road.png" type="Texture" id=15]
+[ext_resource path="res://images/RRaid_Bridge.png" type="Texture" id=16]
+[ext_resource path="res://Shooter.gd" type="Script" id=17]
+[ext_resource path="res://ArmedHeli.gd" type="Script" id=18]
+[ext_resource path="res://images/RRaid_Shooter.png" type="Texture" id=19]
+[ext_resource path="res://ShooterMissile.gd" type="Script" id=20]
+[ext_resource path="res://PlayerMissile.gd" type="Script" id=21]
+[ext_resource path="res://images/RRaid_Player.png" type="Texture" id=22]
+[ext_resource path="res://Player.gd" type="Script" id=23]
+[ext_resource path="res://WidthMarker.tscn" type="PackedScene" id=24]
+[ext_resource path="res://FuelDisplay.gd" type="Script" id=25]
+[ext_resource path="res://images/RRaid_FuelDisplay.png" type="Texture" id=26]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Explode"
@@ -69,18 +77,34 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0.0149996, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 2, 3, 2, 1 ]
+"values": [ 3, 4, 3, 2 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=6]
-radius = 7.0
-height = 3.0
+[sub_resource type="Animation" id=6]
+resource_name = "fly"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
 
-[sub_resource type="Animation" id=7]
-resource_name = "Explode"
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 4.0
+height = 8.49785
+
+[sub_resource type="Animation" id=8]
 length = 0.51
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -95,17 +119,88 @@ tracks/0/keys = {
 "values": [ 1, 2, 3, 2, 1 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=8]
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 7.0
+height = 3.0
+
+[sub_resource type="Animation" id=10]
+length = 0.51
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 2, 1 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=11]
 radius = 3.0
 height = 10.0
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="Animation" id=12]
+length = 0.51
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 2, 1 ]
+}
+
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 28, 9 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="Animation" id=14]
+resource_name = "Explode"
+length = 0.51
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.0149996, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 4, 3, 2 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "fly"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="SegmentShape2D" id=16]
+a = Vector2( -4, 0 )
+b = Vector2( -8, 0 )
+
+[sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 1, 4 )
 
-[sub_resource type="CapsuleShape2D" id=11]
+[sub_resource type="CapsuleShape2D" id=18]
 radius = 3.5
 height = 7.0
 
@@ -114,6 +209,7 @@ scale = Vector2( 4, -4 )
 script = ExtResource( 1 )
 
 [node name="Level" type="Node2D" parent="."]
+editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -237,1072 +333,1072 @@ percOfMarker1 = 10
 [node name="RiverSection11" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 40 )
 startWidth = 91.6368
-endWidth = 91.751
+endWidth = 84.1766
 startJitter = -3
 endJitter = -2
 widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 91.6368, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":40)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
 percOfMarker1 = 100
 
 [node name="RiverSection12" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 44 )
-startWidth = 91.751
-endWidth = 91.8651
+startWidth = 84.1766
+endWidth = 76.7163
 startJitter = -2
 endJitter = -2
 widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 91.6368, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":40)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
 percOfMarker1 = 90
 
 [node name="RiverSection13" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 48 )
-startWidth = 91.8651
-endWidth = 91.9793
+startWidth = 76.7163
+endWidth = 69.2561
 startJitter = -2
 endJitter = 0
 widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 91.6368, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":40)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
 percOfMarker1 = 80
 
 [node name="RiverSection14" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 52 )
-startWidth = 91.9793
-endWidth = 92.0935
+startWidth = 69.2561
+endWidth = 61.7959
 startJitter = 0
 endJitter = 3
 widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 91.6368, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":40)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
 percOfMarker1 = 70
 
 [node name="RiverSection15" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 56 )
-startWidth = 92.0935
-endWidth = 92.2077
+startWidth = 61.7959
+endWidth = 54.3357
 startJitter = 3
 endJitter = 2
 widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 91.6368, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":40)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
 percOfMarker1 = 60
 
 [node name="RiverSection16" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 60 )
-startWidth = 92.2077
-endWidth = 92.3218
+startWidth = 54.3357
+endWidth = 46.8754
 startJitter = 2
 endJitter = 1
 widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 91.6368, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":40)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
 percOfMarker1 = 50
 
 [node name="RiverSection17" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 64 )
-startWidth = 92.3218
-endWidth = 92.436
+startWidth = 46.8754
+endWidth = 39.4152
 startJitter = 1
 endJitter = -1
 widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 91.6368, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":40)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
 percOfMarker1 = 40
 
 [node name="RiverSection18" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 68 )
-startWidth = 92.436
-endWidth = 92.5502
+startWidth = 39.4152
+endWidth = 31.955
 startJitter = -1
 endJitter = -2
 widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 91.6368, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":40)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
 percOfMarker1 = 30
 
 [node name="RiverSection19" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 72 )
-startWidth = 92.5502
-endWidth = 92.6643
+startWidth = 31.955
+endWidth = 24.4947
 startJitter = -2
 endJitter = 4
 widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 91.6368, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":40)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
 percOfMarker1 = 20
 
 [node name="RiverSection20" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 76 )
-startWidth = 92.6643
-endWidth = 92.7785
+startWidth = 24.4947
+endWidth = 17.0345
 startJitter = 4
 endJitter = -2
 widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 91.6368, 40 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":40)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
 percOfMarker1 = 10
 
 [node name="RiverSection21" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 80 )
-startWidth = 92.7785
-endWidth = 88.2912
+startWidth = 17.0345
+endWidth = 16.504
 startJitter = -2
 endJitter = -2
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
 percOfMarker1 = 100
 
 [node name="RiverSection22" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 84 )
-startWidth = 88.2912
-endWidth = 83.804
+startWidth = 16.504
+endWidth = 15.9735
 startJitter = -2
 endJitter = -1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
 percOfMarker1 = 90
 
 [node name="RiverSection23" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 88 )
-startWidth = 83.804
-endWidth = 79.3167
+startWidth = 15.9735
+endWidth = 15.4431
 startJitter = -1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
 percOfMarker1 = 80
 
 [node name="RiverSection24" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 92 )
-startWidth = 79.3167
-endWidth = 74.8295
+startWidth = 15.4431
+endWidth = 14.9126
 startJitter = 5
 endJitter = 4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
 percOfMarker1 = 70
 
 [node name="RiverSection25" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 96 )
-startWidth = 74.8295
-endWidth = 70.3422
+startWidth = 14.9126
+endWidth = 14.3821
 startJitter = 4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
 percOfMarker1 = 60
 
 [node name="RiverSection26" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 100 )
-startWidth = 70.3422
-endWidth = 65.8549
+startWidth = 14.3821
+endWidth = 13.8516
 startJitter = 5
 endJitter = -3
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
 percOfMarker1 = 50
 
 [node name="RiverSection27" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 104 )
-startWidth = 65.8549
-endWidth = 61.3677
+startWidth = 13.8516
+endWidth = 13.3211
 startJitter = -3
 endJitter = -2
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
 percOfMarker1 = 40
 
 [node name="RiverSection28" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 108 )
-startWidth = 61.3677
-endWidth = 56.8804
+startWidth = 13.3211
+endWidth = 12.7906
 startJitter = -2
 endJitter = 4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
 percOfMarker1 = 30
 
 [node name="RiverSection29" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 112 )
-startWidth = 56.8804
-endWidth = 52.3932
+startWidth = 12.7906
+endWidth = 12.2601
 startJitter = 4
 endJitter = 1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
 percOfMarker1 = 20
 
 [node name="RiverSection30" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 116 )
-startWidth = 52.3932
-endWidth = 47.9059
+startWidth = 12.2601
+endWidth = 11.7297
 startJitter = 1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 92.7785, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 17.0345, 80 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":80)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
 percOfMarker1 = 10
 
 [node name="RiverSection31" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 120 )
-startWidth = 47.9059
-endWidth = 41.9769
+startWidth = 11.7297
+endWidth = 5.46152
 startJitter = 5
 endJitter = -4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
 percOfMarker1 = 100
 
 [node name="RiverSection32" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 124 )
-startWidth = 41.9769
-endWidth = 36.0479
+startWidth = 5.46152
+endWidth = -0.806626
 startJitter = -4
 endJitter = 0
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
 percOfMarker1 = 90
 
 [node name="RiverSection33" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 128 )
-startWidth = 36.0479
-endWidth = 30.1189
+startWidth = -0.806626
+endWidth = -7.07477
 startJitter = 0
 endJitter = -1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
 percOfMarker1 = 80
 
 [node name="RiverSection34" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 132 )
-startWidth = 30.1189
-endWidth = 24.1899
+startWidth = -7.07477
+endWidth = -13.3429
 startJitter = -1
 endJitter = 2
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
 percOfMarker1 = 70
 
 [node name="RiverSection35" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 136 )
-startWidth = 24.1899
-endWidth = 18.261
+startWidth = -13.3429
+endWidth = -19.6111
 startJitter = 2
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
 percOfMarker1 = 60
 
 [node name="RiverSection36" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 140 )
-startWidth = 18.261
-endWidth = 12.332
+startWidth = -19.6111
+endWidth = -25.8792
 startJitter = 5
 endJitter = -4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
 percOfMarker1 = 50
 
 [node name="RiverSection37" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 144 )
-startWidth = 12.332
-endWidth = 6.40297
+startWidth = -25.8792
+endWidth = -32.1473
 startJitter = -4
 endJitter = -5
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
 percOfMarker1 = 40
 
 [node name="RiverSection38" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 148 )
-startWidth = 6.40297
-endWidth = 0.47398
+startWidth = -32.1473
+endWidth = -38.4155
 startJitter = -5
 endJitter = -2
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
 percOfMarker1 = 30
 
 [node name="RiverSection39" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 152 )
-startWidth = 0.47398
-endWidth = -5.45501
+startWidth = -38.4155
+endWidth = -44.6836
 startJitter = -2
 endJitter = -4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
 percOfMarker1 = 20
 
 [node name="RiverSection40" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 156 )
-startWidth = -5.45501
-endWidth = -11.384
+startWidth = -44.6836
+endWidth = -50.9518
 startJitter = -4
 endJitter = -3
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 47.9059, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 11.7297, 120 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":120)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
 percOfMarker1 = 10
 
 [node name="RiverSection41" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 160 )
-startWidth = -11.384
-endWidth = -11.7043
+startWidth = -50.9518
+endWidth = -41.399
 startJitter = -3
 endJitter = 1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
 percOfMarker1 = 100
 
 [node name="RiverSection42" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 164 )
-startWidth = -11.7043
-endWidth = -12.0247
+startWidth = -41.399
+endWidth = -31.8462
 startJitter = 1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
 percOfMarker1 = 90
 
 [node name="RiverSection43" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 168 )
-startWidth = -12.0247
-endWidth = -12.345
+startWidth = -31.8462
+endWidth = -22.2935
 startJitter = 5
 endJitter = -5
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
 percOfMarker1 = 80
 
 [node name="RiverSection44" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 172 )
-startWidth = -12.345
-endWidth = -12.6653
+startWidth = -22.2935
+endWidth = -12.7407
 startJitter = -5
 endJitter = -3
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
 percOfMarker1 = 70
 
 [node name="RiverSection45" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 176 )
-startWidth = -12.6653
-endWidth = -12.9857
+startWidth = -12.7407
+endWidth = -3.18793
 startJitter = -3
 endJitter = -1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
 percOfMarker1 = 60
 
 [node name="RiverSection46" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 180 )
-startWidth = -12.9857
-endWidth = -13.306
+startWidth = -3.18793
+endWidth = 6.36484
 startJitter = -1
 endJitter = 4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
 percOfMarker1 = 50
 
 [node name="RiverSection47" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 184 )
-startWidth = -13.306
-endWidth = -13.6263
+startWidth = 6.36484
+endWidth = 15.9176
 startJitter = 4
 endJitter = 3
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
 percOfMarker1 = 40
 
 [node name="RiverSection48" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 188 )
-startWidth = -13.6263
-endWidth = -13.9466
+startWidth = 15.9176
+endWidth = 25.4704
 startJitter = 3
 endJitter = -1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
 percOfMarker1 = 30
 
 [node name="RiverSection49" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 192 )
-startWidth = -13.9466
-endWidth = -14.267
+startWidth = 25.4704
+endWidth = 35.0231
 startJitter = -1
 endJitter = -3
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
 percOfMarker1 = 20
 
 [node name="RiverSection50" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 196 )
-startWidth = -14.267
-endWidth = -14.5873
+startWidth = 35.0231
+endWidth = 44.5759
 startJitter = -3
 endJitter = 1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -11.384, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -50.9518, 160 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":160)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
 percOfMarker1 = 10
 
 [node name="RiverSection51" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 200 )
-startWidth = -14.5873
-endWidth = -10.7347
+startWidth = 44.5759
+endWidth = 48.6169
 startJitter = 1
 endJitter = 4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
 percOfMarker1 = 100
 
 [node name="RiverSection52" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 204 )
-startWidth = -10.7347
-endWidth = -6.88218
+startWidth = 48.6169
+endWidth = 52.6579
 startJitter = 4
 endJitter = -1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
 percOfMarker1 = 90
 
 [node name="RiverSection53" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 208 )
-startWidth = -6.88218
-endWidth = -3.02962
+startWidth = 52.6579
+endWidth = 56.6988
 startJitter = -1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
 percOfMarker1 = 80
 
 [node name="RiverSection54" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 212 )
-startWidth = -3.02962
-endWidth = 0.82294
+startWidth = 56.6988
+endWidth = 60.7398
 startJitter = 5
 endJitter = -4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
 percOfMarker1 = 70
 
 [node name="RiverSection55" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 216 )
-startWidth = 0.82294
-endWidth = 4.6755
+startWidth = 60.7398
+endWidth = 64.7808
 startJitter = -4
 endJitter = 0
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
 percOfMarker1 = 60
 
 [node name="RiverSection56" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 220 )
-startWidth = 4.6755
-endWidth = 8.52806
+startWidth = 64.7808
+endWidth = 68.8218
 startJitter = 0
 endJitter = -5
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
 percOfMarker1 = 50
 
 [node name="RiverSection57" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 224 )
-startWidth = 8.52806
-endWidth = 12.3806
+startWidth = 68.8218
+endWidth = 72.8628
 startJitter = -5
 endJitter = -2
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
 percOfMarker1 = 40
 
 [node name="RiverSection58" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 228 )
-startWidth = 12.3806
-endWidth = 16.2332
+startWidth = 72.8628
+endWidth = 76.9037
 startJitter = -2
 endJitter = 4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
 percOfMarker1 = 30
 
 [node name="RiverSection59" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 232 )
-startWidth = 16.2332
-endWidth = 20.0857
+startWidth = 76.9037
+endWidth = 80.9447
 startJitter = 4
 endJitter = 3
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
 percOfMarker1 = 20
 
 [node name="RiverSection60" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 236 )
-startWidth = 20.0857
-endWidth = 23.9383
+startWidth = 80.9447
+endWidth = 84.9857
 startJitter = 3
 endJitter = 0
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -14.5873, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 44.5759, 200 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":200)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
 percOfMarker1 = 10
 
 [node name="RiverSection61" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 240 )
-startWidth = 23.9383
-endWidth = 24.6963
+startWidth = 84.9857
+endWidth = 71.5447
 startJitter = 0
 endJitter = -3
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
 percOfMarker1 = 100
 
 [node name="RiverSection62" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 244 )
-startWidth = 24.6963
-endWidth = 25.4544
+startWidth = 71.5447
+endWidth = 58.1038
 startJitter = -3
 endJitter = 2
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
 percOfMarker1 = 90
 
 [node name="RiverSection63" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 248 )
-startWidth = 25.4544
-endWidth = 26.2124
+startWidth = 58.1038
+endWidth = 44.6628
 startJitter = 2
 endJitter = -5
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
 percOfMarker1 = 80
 
 [node name="RiverSection64" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 252 )
-startWidth = 26.2124
-endWidth = 26.9704
+startWidth = 44.6628
+endWidth = 31.2219
 startJitter = -5
 endJitter = -1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
 percOfMarker1 = 70
 
 [node name="RiverSection65" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 256 )
-startWidth = 26.9704
-endWidth = 27.7285
+startWidth = 31.2219
+endWidth = 17.7809
 startJitter = -1
 endJitter = 1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
 percOfMarker1 = 60
 
 [node name="RiverSection66" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 260 )
-startWidth = 27.7285
-endWidth = 28.4865
+startWidth = 17.7809
+endWidth = 4.34
 startJitter = 1
 endJitter = 3
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
 percOfMarker1 = 50
 
 [node name="RiverSection67" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 264 )
-startWidth = 28.4865
-endWidth = 29.2445
+startWidth = 4.34
+endWidth = -9.10095
 startJitter = 3
 endJitter = -2
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
 percOfMarker1 = 40
 
 [node name="RiverSection68" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 268 )
-startWidth = 29.2445
-endWidth = 30.0025
+startWidth = -9.10095
+endWidth = -22.5419
 startJitter = -2
 endJitter = 4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
 percOfMarker1 = 30
 
 [node name="RiverSection69" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 272 )
-startWidth = 30.0025
-endWidth = 30.7606
+startWidth = -22.5419
+endWidth = -35.9829
 startJitter = 4
 endJitter = 4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
 percOfMarker1 = 20
 
 [node name="RiverSection70" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 276 )
-startWidth = 30.7606
-endWidth = 31.5186
+startWidth = -35.9829
+endWidth = -49.4238
 startJitter = 4
 endJitter = 4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 23.9383, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 84.9857, 240 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":240)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
 percOfMarker1 = 10
 
 [node name="RiverSection71" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 280 )
-startWidth = 31.5186
-endWidth = 34.7177
+startWidth = -49.4238
+endWidth = -48.4693
 startJitter = 4
 endJitter = 2
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
 percOfMarker1 = 100
 
 [node name="RiverSection72" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 284 )
-startWidth = 34.7177
-endWidth = 37.9169
+startWidth = -48.4693
+endWidth = -47.5148
 startJitter = 2
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
 percOfMarker1 = 90
 
 [node name="RiverSection73" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 288 )
-startWidth = 37.9169
-endWidth = 41.116
+startWidth = -47.5148
+endWidth = -46.5603
 startJitter = 5
 endJitter = -5
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
 percOfMarker1 = 80
 
 [node name="RiverSection74" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 292 )
-startWidth = 41.116
-endWidth = 44.3152
+startWidth = -46.5603
+endWidth = -45.6058
 startJitter = -5
 endJitter = 4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
 percOfMarker1 = 70
 
 [node name="RiverSection75" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 296 )
-startWidth = 44.3152
-endWidth = 47.5143
+startWidth = -45.6058
+endWidth = -44.6513
 startJitter = 4
 endJitter = -2
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
 percOfMarker1 = 60
 
 [node name="RiverSection76" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 300 )
-startWidth = 47.5143
-endWidth = 50.7134
+startWidth = -44.6513
+endWidth = -43.6967
 startJitter = -2
 endJitter = 1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
 percOfMarker1 = 50
 
 [node name="RiverSection77" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 304 )
-startWidth = 50.7134
-endWidth = 53.9126
+startWidth = -43.6967
+endWidth = -42.7422
 startJitter = 1
 endJitter = -4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
 percOfMarker1 = 40
 
 [node name="RiverSection78" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 308 )
-startWidth = 53.9126
-endWidth = 57.1117
+startWidth = -42.7422
+endWidth = -41.7877
 startJitter = -4
 endJitter = 3
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
 percOfMarker1 = 30
 
 [node name="RiverSection79" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 312 )
-startWidth = 57.1117
-endWidth = 60.3109
+startWidth = -41.7877
+endWidth = -40.8332
 startJitter = 3
 endJitter = 4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
 percOfMarker1 = 20
 
 [node name="RiverSection80" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 316 )
-startWidth = 60.3109
-endWidth = 63.51
+startWidth = -40.8332
+endWidth = -39.8787
 startJitter = 4
 endJitter = -2
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 31.5186, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -49.4238, 280 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":280)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
 percOfMarker1 = 10
 
 [node name="RiverSection81" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 320 )
-startWidth = 63.51
-endWidth = 62.5774
+startWidth = -39.8787
+endWidth = -31.9349
 startJitter = -2
 endJitter = -2
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
 percOfMarker1 = 100
 
 [node name="RiverSection82" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 324 )
-startWidth = 62.5774
-endWidth = 61.6447
+startWidth = -31.9349
+endWidth = -23.9911
 startJitter = -2
 endJitter = 1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
 percOfMarker1 = 90
 
 [node name="RiverSection83" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 328 )
-startWidth = 61.6447
-endWidth = 60.7121
+startWidth = -23.9911
+endWidth = -16.0472
 startJitter = 1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
 percOfMarker1 = 80
 
 [node name="RiverSection84" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 332 )
-startWidth = 60.7121
-endWidth = 59.7794
+startWidth = -16.0472
+endWidth = -8.10342
 startJitter = 5
 endJitter = -3
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
 percOfMarker1 = 70
 
 [node name="RiverSection85" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 336 )
-startWidth = 59.7794
-endWidth = 58.8468
+startWidth = -8.10342
+endWidth = -0.159599
 startJitter = -3
 endJitter = -3
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
 percOfMarker1 = 60
 
 [node name="RiverSection86" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 340 )
-startWidth = 58.8468
-endWidth = 57.9142
+startWidth = -0.159599
+endWidth = 7.78422
 startJitter = -3
 endJitter = 2
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
 percOfMarker1 = 50
 
 [node name="RiverSection87" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 344 )
-startWidth = 57.9142
-endWidth = 56.9815
+startWidth = 7.78422
+endWidth = 15.728
 startJitter = 2
 endJitter = -4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
 percOfMarker1 = 40
 
 [node name="RiverSection88" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 348 )
-startWidth = 56.9815
-endWidth = 56.0489
+startWidth = 15.728
+endWidth = 23.6719
 startJitter = -4
 endJitter = 3
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
 percOfMarker1 = 30
 
 [node name="RiverSection89" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 352 )
-startWidth = 56.0489
-endWidth = 55.1162
+startWidth = 23.6719
+endWidth = 31.6157
 startJitter = 3
 endJitter = -2
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
 percOfMarker1 = 20
 
 [node name="RiverSection90" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 356 )
-startWidth = 55.1162
-endWidth = 54.1836
+startWidth = 31.6157
+endWidth = 39.5595
 startJitter = -2
 endJitter = 4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 63.51, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -39.8787, 320 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":320)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
 percOfMarker1 = 10
 
 [node name="RiverSection91" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 360 )
-startWidth = 54.1836
-endWidth = 58.8185
+startWidth = 39.5595
+endWidth = 40.1133
 startJitter = 4
 endJitter = -4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 100.533, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 45.0976, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
 
 percOfMarker1 = 100
 
 [node name="RiverSection92" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 364 )
-startWidth = 58.8185
-endWidth = 63.4535
+startWidth = 40.1133
+endWidth = 40.6671
 startJitter = -4
 endJitter = 1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 100.533, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 45.0976, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
 
 percOfMarker1 = 90
 
 [node name="RiverSection93" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 368 )
-startWidth = 63.4535
-endWidth = 68.0884
+startWidth = 40.6671
+endWidth = 41.2209
 startJitter = 1
 endJitter = 2
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 100.533, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 45.0976, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
 
 percOfMarker1 = 80
 
 [node name="RiverSection94" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 372 )
-startWidth = 68.0884
-endWidth = 72.7234
+startWidth = 41.2209
+endWidth = 41.7747
 startJitter = 2
 endJitter = 4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 100.533, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 45.0976, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
 
 percOfMarker1 = 70
 
 [node name="RiverSection95" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 376 )
-startWidth = 72.7234
-endWidth = 77.3583
+startWidth = 41.7747
+endWidth = 42.3286
 startJitter = 4
 endJitter = -4
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 100.533, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 45.0976, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
 
 percOfMarker1 = 60
 
 [node name="RiverSection96" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 380 )
-startWidth = 77.3583
-endWidth = 81.9932
+startWidth = 42.3286
+endWidth = 42.8824
 startJitter = -4
 endJitter = 1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 100.533, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 45.0976, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
 
 percOfMarker1 = 50
 
 [node name="RiverSection97" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 384 )
-startWidth = 81.9932
-endWidth = 86.6282
+startWidth = 42.8824
+endWidth = 43.4362
 startJitter = 1
 endJitter = -5
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 100.533, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 45.0976, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
 
 percOfMarker1 = 40
 
 [node name="RiverSection98" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 388 )
-startWidth = 86.6282
-endWidth = 91.2631
+startWidth = 43.4362
+endWidth = 43.99
 startJitter = -5
 endJitter = -1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 100.533, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 45.0976, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
 
 percOfMarker1 = 30
 
 [node name="RiverSection99" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 392 )
-startWidth = 91.2631
-endWidth = 95.8981
+startWidth = 43.99
+endWidth = 44.5438
 startJitter = -1
 endJitter = 3
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 100.533, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 45.0976, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
 
 percOfMarker1 = 20
 
 [node name="RiverSection100" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 0, 396 )
-startWidth = 95.8981
-endWidth = 100.533
+startWidth = 44.5438
+endWidth = 45.0976
 startJitter = 3
 endJitter = -1
-widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 54.1836, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
+widthMarker1 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 39.5595, 360 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":360)
 
-widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 100.533, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
+widthMarker2 = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 45.0976, 400 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":Resource( "res://WidthMarker.gd" ),"origY":400)
 
 percOfMarker1 = 10
 
@@ -1331,7 +1427,6 @@ anims/Explode = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="Ship" type="KinematicBody2D" parent="Objects"]
-editor/display_folded = true
 position = Vector2( 184.113, 176.91 )
 scale = Vector2( 1, -1 )
 collision_layer = 2
@@ -1352,9 +1447,9 @@ anims/Explode = SubResource( 3 )
 rotation = 1.5708
 shape = SubResource( 4 )
 
-[node name="Balloon" type="KinematicBody2D" parent="Objects"]
+[node name="Helicopter" type="KinematicBody2D" parent="Objects"]
 editor/display_folded = true
-position = Vector2( 195.163, 206.069 )
+position = Vector2( 57.7667, 172.388 )
 scale = Vector2( 1, -1 )
 collision_layer = 2
 collision_mask = 7
@@ -1363,48 +1458,75 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Objects/Balloon"]
+[node name="Sprite" type="Sprite" parent="Objects/Helicopter"]
 texture = ExtResource( 8 )
-vframes = 2
+vframes = 3
 hframes = 2
 
-[node name="Animation" type="AnimationPlayer" parent="Objects/Balloon/Sprite"]
+[node name="Animation" type="AnimationPlayer" parent="Objects/Helicopter/Sprite"]
 anims/Explode = SubResource( 5 )
+anims/fly = SubResource( 6 )
 
-[node name="Collider" type="CollisionShape2D" parent="Objects/Balloon"]
-shape = SubResource( 6 )
+[node name="Collider" type="CollisionShape2D" parent="Objects/Helicopter"]
+rotation = 1.5708
+shape = SubResource( 7 )
 
-[node name="Plane" type="KinematicBody2D" parent="Objects"]
-position = Vector2( 32.526, 123.004 )
+[node name="Balloon" type="KinematicBody2D" parent="Objects"]
+editor/display_folded = true
+position = Vector2( 137.507, 219.258 )
 scale = Vector2( 1, -1 )
 collision_layer = 2
-collision_mask = 4
+collision_mask = 7
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Objects/Plane"]
+[node name="Sprite" type="Sprite" parent="Objects/Balloon"]
 texture = ExtResource( 10 )
+vframes = 2
+hframes = 2
+
+[node name="Animation" type="AnimationPlayer" parent="Objects/Balloon/Sprite"]
+anims/Explode = SubResource( 8 )
+
+[node name="Collider" type="CollisionShape2D" parent="Objects/Balloon"]
+shape = SubResource( 9 )
+
+[node name="Plane" type="KinematicBody2D" parent="Objects"]
+editor/display_folded = true
+position = Vector2( 84.9062, 112.076 )
+scale = Vector2( 1, -1 )
+collision_layer = 2
+collision_mask = 4
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Objects/Plane"]
+texture = ExtResource( 12 )
 vframes = 4
 
 [node name="Animation" type="AnimationPlayer" parent="Objects/Plane/Sprite"]
-anims/Explode = SubResource( 7 )
+anims/Explode = SubResource( 10 )
 
 [node name="Collider" type="CollisionShape2D" parent="Objects/Plane"]
 rotation = 1.5708
-shape = SubResource( 8 )
+shape = SubResource( 11 )
 
 [node name="Alps" type="Sprite" parent="Objects"]
 position = Vector2( 36.606, 31.4689 )
 scale = Vector2( 1, -1 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 vframes = 3
 hframes = 2
 
 [node name="Bridge" type="Area2D" parent="Objects"]
+editor/display_folded = true
 position = Vector2( 128, 66 )
 scale = Vector2( 1, -1 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1412,53 +1534,85 @@ __meta__ = {
 [node name="LeftBank" type="Node2D" parent="Objects/Bridge"]
 editor/display_folded = true
 
-[node name="Street1" type="Polygon2D" parent="Objects/Bridge/LeftBank"]
-color = Color( 0.254902, 0.254902, 0.254902, 1 )
-polygon = PoolVector2Array( -128, -8, -28, -8, -28, 9, -128, 9 )
-
-[node name="Street2" type="Polygon2D" parent="Objects/Bridge/LeftBank"]
-color = Color( 0.533333, 0.533333, 0.533333, 1 )
-polygon = PoolVector2Array( -128, -6, -28, -6, -28, 6, -128, 6 )
-
-[node name="Street3" type="Polygon2D" parent="Objects/Bridge/LeftBank"]
-color = Color( 1, 0.968627, 0.396078, 1 )
-polygon = PoolVector2Array( -128, -2, -28, -2, -28, 0, -128, 0 )
+[node name="Street" type="Polygon2D" parent="Objects/Bridge/LeftBank"]
+position = Vector2( 0, -1 )
+texture = ExtResource( 15 )
+texture_offset = Vector2( 0, 8 )
+polygon = PoolVector2Array( -128, -8, -28, -8, -24.5234, -4.15916, -28.0054, 0.483528, -25.2972, 4.54589, -28, 9, -128, 9 )
 
 [node name="RightBank" type="Node2D" parent="Objects/Bridge"]
 editor/display_folded = true
 
-[node name="Street1" type="Polygon2D" parent="Objects/Bridge/RightBank"]
-color = Color( 0.254902, 0.254902, 0.254902, 1 )
-polygon = PoolVector2Array( 28, -8, 128, -8, 128, 9, 28, 9 )
-
-[node name="Street2" type="Polygon2D" parent="Objects/Bridge/RightBank"]
-color = Color( 0.533333, 0.533333, 0.533333, 1 )
-polygon = PoolVector2Array( 28, -6, 128, -6, 128, 6, 28, 6 )
-
-[node name="Street3" type="Polygon2D" parent="Objects/Bridge/RightBank"]
-color = Color( 1, 0.968627, 0.396078, 1 )
-polygon = PoolVector2Array( 28, -2, 128, -2, 128, 0, 28, 0 )
+[node name="Street" type="Polygon2D" parent="Objects/Bridge/RightBank"]
+position = Vector2( 0, -9 )
+offset = Vector2( 0, 8 )
+texture = ExtResource( 15 )
+polygon = PoolVector2Array( 28, -8, 128, -8, 128, 9, 28, 9, 26.1593, 4.54589, 27.7069, 0.0966339, 24.2249, -3.38538 )
 
 [node name="Sprite" type="Sprite" parent="Objects/Bridge"]
-texture = ExtResource( 12 )
+texture = ExtResource( 16 )
 vframes = 3
+
+[node name="Animation" type="AnimationPlayer" parent="Objects/Bridge/Sprite"]
+anims/Explode = SubResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bridge"]
 visible = false
-shape = SubResource( 9 )
+shape = SubResource( 13 )
+
+[node name="Shooter" type="Node2D" parent="Objects"]
+script = ExtResource( 17 )
+
+[node name="ArmedHeli" type="KinematicBody2D" parent="Objects/Shooter"]
+position = Vector2( 70.1746, 193.134 )
+scale = Vector2( 1, -1 )
+collision_layer = 2
+collision_mask = 5
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Objects/Shooter/ArmedHeli"]
+texture = ExtResource( 19 )
+vframes = 3
+hframes = 2
+
+[node name="Animation" type="AnimationPlayer" parent="Objects/Shooter/ArmedHeli/Sprite"]
+anims/Explode = SubResource( 14 )
+anims/fly = SubResource( 15 )
+
+[node name="Collider" type="CollisionShape2D" parent="Objects/Shooter/ArmedHeli"]
+rotation = 1.5708
+shape = SubResource( 7 )
+
+[node name="Missile" type="KinematicBody2D" parent="Objects/Shooter"]
+scale = Vector2( 1, -1 )
+collision_layer = 2
+collision_mask = 5
+script = ExtResource( 20 )
+
+[node name="Sprite" type="Sprite" parent="Objects/Shooter/Missile"]
+texture = ExtResource( 19 )
+vframes = 3
+hframes = 2
+frame = 5
+
+[node name="Collider" type="CollisionShape2D" parent="Objects/Shooter/Missile"]
+shape = SubResource( 16 )
 
 [node name="PlayerMissile" type="KinematicBody2D" parent="."]
 position = Vector2( 128, 50 )
 collision_layer = 4
 collision_mask = 3
-script = ExtResource( 13 )
+script = ExtResource( 21 )
 
 [node name="Collider" type="CollisionShape2D" parent="PlayerMissile"]
-shape = SubResource( 10 )
+shape = SubResource( 17 )
 
 [node name="Sprite" type="Sprite" parent="PlayerMissile"]
 scale = Vector2( 1, -1 )
-texture = ExtResource( 14 )
+texture = ExtResource( 22 )
 vframes = 3
 hframes = 3
 frame = 6
@@ -1467,23 +1621,24 @@ frame = 6
 rect = Rect2( -5, -5, 10, 10 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 128, 12 )
 scale = Vector2( 1, -1 )
 collision_layer = 4
 collision_mask = 3
-script = ExtResource( 15 )
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Body" type="Sprite" parent="Player"]
-texture = ExtResource( 14 )
+texture = ExtResource( 22 )
 vframes = 3
 hframes = 3
 region_rect = Rect2( 0, 0, 16, 20 )
 
 [node name="Collider" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 11 )
+shape = SubResource( 18 )
 
 [node name="Camera" type="Camera2D" parent="Player"]
 offset = Vector2( 0, -220 )
@@ -1498,47 +1653,47 @@ autostart = true
 
 [node name="LevelEditor" type="Node2D" parent="."]
 
-[node name="WidthMarker" parent="LevelEditor" instance=ExtResource( 16 )]
+[node name="WidthMarker" parent="LevelEditor" instance=ExtResource( 24 )]
 position = Vector2( 68.3194, 0 )
 
-[node name="WidthMarker2" parent="LevelEditor" instance=ExtResource( 16 )]
+[node name="WidthMarker2" parent="LevelEditor" instance=ExtResource( 24 )]
 position = Vector2( 91.6368, 40 )
 origY = 40
 
-[node name="WidthMarker3" parent="LevelEditor" instance=ExtResource( 16 )]
-position = Vector2( 92.7785, 80 )
+[node name="WidthMarker3" parent="LevelEditor" instance=ExtResource( 24 )]
+position = Vector2( 17.0345, 80 )
 origY = 80
 
-[node name="WidthMarker4" parent="LevelEditor" instance=ExtResource( 16 )]
-position = Vector2( 47.9059, 120 )
+[node name="WidthMarker4" parent="LevelEditor" instance=ExtResource( 24 )]
+position = Vector2( 11.7297, 120 )
 origY = 120
 
-[node name="WidthMarker5" parent="LevelEditor" instance=ExtResource( 16 )]
-position = Vector2( -11.384, 160 )
+[node name="WidthMarker5" parent="LevelEditor" instance=ExtResource( 24 )]
+position = Vector2( -50.9518, 160 )
 origY = 160
 
-[node name="WidthMarker6" parent="LevelEditor" instance=ExtResource( 16 )]
-position = Vector2( -14.5873, 200 )
+[node name="WidthMarker6" parent="LevelEditor" instance=ExtResource( 24 )]
+position = Vector2( 44.5759, 200 )
 origY = 200
 
-[node name="WidthMarker7" parent="LevelEditor" instance=ExtResource( 16 )]
-position = Vector2( 23.9383, 240 )
+[node name="WidthMarker7" parent="LevelEditor" instance=ExtResource( 24 )]
+position = Vector2( 84.9857, 240 )
 origY = 240
 
-[node name="WidthMarker8" parent="LevelEditor" instance=ExtResource( 16 )]
-position = Vector2( 31.5186, 280 )
+[node name="WidthMarker8" parent="LevelEditor" instance=ExtResource( 24 )]
+position = Vector2( -49.4238, 280 )
 origY = 280
 
-[node name="WidthMarker9" parent="LevelEditor" instance=ExtResource( 16 )]
-position = Vector2( 63.51, 320 )
+[node name="WidthMarker9" parent="LevelEditor" instance=ExtResource( 24 )]
+position = Vector2( -39.8787, 320 )
 origY = 320
 
-[node name="WidthMarker10" parent="LevelEditor" instance=ExtResource( 16 )]
-position = Vector2( 54.1836, 360 )
+[node name="WidthMarker10" parent="LevelEditor" instance=ExtResource( 24 )]
+position = Vector2( 39.5595, 360 )
 origY = 360
 
-[node name="WidthMarker11" parent="LevelEditor" instance=ExtResource( 16 )]
-position = Vector2( 100.533, 400 )
+[node name="WidthMarker11" parent="LevelEditor" instance=ExtResource( 24 )]
+position = Vector2( 45.0976, 400 )
 origY = 400
 
 [node name="HUD" type="CanvasLayer" parent="."]
@@ -1552,7 +1707,7 @@ polygon = PoolVector2Array( 0, 0, 256, 0, 256, 30, 0, 30 )
 
 [node name="FuelDisplay" type="Node2D" parent="HUD/Background"]
 position = Vector2( 100, 20 )
-script = ExtResource( 17 )
+script = ExtResource( 25 )
 
 [node name="Marker" type="Polygon2D" parent="HUD/Background/FuelDisplay"]
 position = Vector2( -29, -3 )
@@ -1560,9 +1715,10 @@ color = Color( 1, 0.968627, 0.396078, 1 )
 polygon = PoolVector2Array( 0, 0, 4, 0, 4, 10, 0, 10 )
 
 [node name="Display" type="Sprite" parent="HUD/Background/FuelDisplay"]
-texture = ExtResource( 18 )
+texture = ExtResource( 26 )
 [connection signal="body_entered" from="Objects/Fuel" to="Objects/Fuel" method="_on_Fuel_body_entered"]
 [connection signal="body_exited" from="Objects/Fuel" to="Objects/Fuel" method="_on_Fuel_body_exited"]
+[connection signal="body_entered" from="Objects/Bridge" to="Objects/Bridge" method="_on_Bridge_body_entered"]
 [connection signal="screen_exited" from="PlayerMissile/VisibilityNotifier2D" to="PlayerMissile" method="_on_VisibilityNotifier2D_screen_exited"]
 [connection signal="fuel_updated" from="Player" to="HUD/Background/FuelDisplay" method="_on_Player_fuel_updated"]
 [connection signal="timeout" from="Player/FuelTicker" to="Player" method="_on_FuelTicker_timeout"]

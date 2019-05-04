@@ -3,6 +3,7 @@ extends KinematicBody2D
 var speed = 80
 
 func explode():
+	$Collider.disabled = true
 	$Sprite/Animation.play("Explode")
 	yield($Sprite/Animation, "animation_finished")
 	self.queue_free()

@@ -6,6 +6,7 @@ func _ready():
 	set_position(Vector2(-8, position.y))
 
 func explode():
+	$Collider.disabled = true
 	$Sprite/Animation.play("Explode")
 	yield($Sprite/Animation, "animation_finished")
 	self.queue_free()

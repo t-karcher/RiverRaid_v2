@@ -1,6 +1,9 @@
 extends KinematicBody2D
 
-var speed = 150
+var speed = -150
+
+func _ready():
+	$Sprite/Animation.play("fly")
 
 func explode():
 	$Collider.disabled = true
