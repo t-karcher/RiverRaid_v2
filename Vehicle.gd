@@ -9,9 +9,10 @@ enum {
 }
 
 var mode = MODE_DRIVING
+var missile: KinematicBody2D
 
 func stop():
-	mode = MODE_WAITING
+	mode = MODE_SHOOTING
 
 func explode():
 	$Collider.disabled = true
@@ -28,8 +29,10 @@ func _process(delta):
 		if is_instance_valid(c):
 			if c.collider.name in ["RightBank", "LeftBank", "Island"]:
 				$Sprite/Animation.stop(true)
-				mode = MODE_SHOOTING if randf() < 1 else MODE_WAITING			
+				mode = MODE_SHOOTING # if randf() < 1 else MODE_WAITING			
 			else:
 				explode()
-	elif mode == MODE_SHOOTING:
-		pass #TODO: implement shooting
+	else:
+		if mode == MODE_SHOOTING: missile.startShooting()
+		print ("Boom!")
+		set_process(false)

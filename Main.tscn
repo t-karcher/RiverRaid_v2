@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://RiverSection.tscn" type="PackedScene" id=2]
@@ -9,25 +9,27 @@
 [ext_resource path="res://Bridge.gd" type="Script" id=7]
 [ext_resource path="res://images/RRaid_Road.png" type="Texture" id=8]
 [ext_resource path="res://images/RRaid_Bridge.png" type="Texture" id=9]
-[ext_resource path="res://Vehicle.gd" type="Script" id=10]
-[ext_resource path="res://images/RRaid_Tank.png" type="Texture" id=11]
-[ext_resource path="res://Helicopter.gd" type="Script" id=12]
-[ext_resource path="res://images/RRaid_Copter.png" type="Texture" id=13]
-[ext_resource path="res://Balloon.gd" type="Script" id=14]
-[ext_resource path="res://images/RRaid_Balloon.png" type="Texture" id=15]
-[ext_resource path="res://Plane.gd" type="Script" id=16]
-[ext_resource path="res://images/RRaid_Plane.png" type="Texture" id=17]
-[ext_resource path="res://images/RRaid_Alps.png" type="Texture" id=18]
-[ext_resource path="res://Shooter.gd" type="Script" id=19]
-[ext_resource path="res://ArmedHeli.gd" type="Script" id=20]
-[ext_resource path="res://images/RRaid_Shooter.png" type="Texture" id=21]
-[ext_resource path="res://ShooterMissile.gd" type="Script" id=22]
-[ext_resource path="res://PlayerMissile.gd" type="Script" id=23]
-[ext_resource path="res://images/RRaid_Player.png" type="Texture" id=24]
-[ext_resource path="res://Player.gd" type="Script" id=25]
-[ext_resource path="res://WidthMarker.tscn" type="PackedScene" id=26]
-[ext_resource path="res://FuelDisplay.gd" type="Script" id=27]
-[ext_resource path="res://images/RRaid_FuelDisplay.png" type="Texture" id=28]
+[ext_resource path="res://Tank.gd" type="Script" id=10]
+[ext_resource path="res://TankMissile.gd" type="Script" id=11]
+[ext_resource path="res://images/RRaid_Tank.png" type="Texture" id=12]
+[ext_resource path="res://Vehicle.gd" type="Script" id=13]
+[ext_resource path="res://Helicopter.gd" type="Script" id=14]
+[ext_resource path="res://images/RRaid_Copter.png" type="Texture" id=15]
+[ext_resource path="res://Balloon.gd" type="Script" id=16]
+[ext_resource path="res://images/RRaid_Balloon.png" type="Texture" id=17]
+[ext_resource path="res://Plane.gd" type="Script" id=18]
+[ext_resource path="res://images/RRaid_Plane.png" type="Texture" id=19]
+[ext_resource path="res://images/RRaid_Alps.png" type="Texture" id=20]
+[ext_resource path="res://Shooter.gd" type="Script" id=21]
+[ext_resource path="res://ArmedHeli.gd" type="Script" id=22]
+[ext_resource path="res://images/RRaid_Shooter.png" type="Texture" id=23]
+[ext_resource path="res://ShooterMissile.gd" type="Script" id=24]
+[ext_resource path="res://PlayerMissile.gd" type="Script" id=25]
+[ext_resource path="res://images/RRaid_Player.png" type="Texture" id=26]
+[ext_resource path="res://Player.gd" type="Script" id=27]
+[ext_resource path="res://WidthMarker.tscn" type="PackedScene" id=28]
+[ext_resource path="res://FuelDisplay.gd" type="Script" id=29]
+[ext_resource path="res://images/RRaid_FuelDisplay.png" type="Texture" id=30]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Explode"
@@ -69,7 +71,7 @@ tracks/0/keys = {
 radius = 4.0
 height = 24.0
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=5]
 length = 0.51
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -84,19 +86,20 @@ tracks/0/keys = {
 "values": [ 1, 2, 3, 2, 1 ]
 }
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 28, 9 )
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 50, 9 )
 
-[sub_resource type="RectangleShape2D" id=23]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 50, 9 )
 
-[sub_resource type="Animation" id=5]
-resource_name = "Drive"
-length = 0.2
-loop = true
+[sub_resource type="CircleShape2D" id=12]
+radius = 6.0
+
+[sub_resource type="Animation" id=13]
+resource_name = "Explode"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -104,44 +107,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
+"times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 1, 0 ]
-}
-
-[sub_resource type="Animation" id=6]
-length = 0.51
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 2, 3, 2, 3, 2 ]
-}
-
-[sub_resource type="CapsuleShape2D" id=7]
-radius = 4.5
-height = 8.0
-
-[sub_resource type="Animation" id=8]
-length = 0.51
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.0149996, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 3, 4, 3, 2 ]
+"update": 0,
+"values": [ 5, 9 ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -157,14 +126,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 0, 1 ]
+"values": [ 1, 0 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=10]
-radius = 4.0
-height = 8.49785
-
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=10]
 length = 0.51
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -176,33 +141,14 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 2, 3, 2, 1 ]
+"values": [ 2, 3, 2, 3, 2 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=12]
-radius = 7.0
-height = 3.0
+[sub_resource type="CapsuleShape2D" id=11]
+radius = 4.5
+height = 8.0
 
-[sub_resource type="Animation" id=13]
-length = 0.51
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 1, 2, 3, 2, 1 ]
-}
-
-[sub_resource type="CapsuleShape2D" id=14]
-radius = 3.0
-height = 10.0
-
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=14]
 length = 0.51
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -217,7 +163,7 @@ tracks/0/keys = {
 "values": [ 3, 4, 3, 2 ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=15]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -233,14 +179,87 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="SegmentShape2D" id=19]
+[sub_resource type="CapsuleShape2D" id=16]
+radius = 4.0
+height = 8.49785
+
+[sub_resource type="Animation" id=17]
+length = 0.51
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 2, 1 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=18]
+radius = 7.0
+height = 3.0
+
+[sub_resource type="Animation" id=19]
+length = 0.51
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 2, 1 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=20]
+radius = 3.0
+height = 10.0
+
+[sub_resource type="Animation" id=21]
+length = 0.51
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.0149996, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 4, 3, 2 ]
+}
+
+[sub_resource type="Animation" id=22]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="SegmentShape2D" id=23]
 a = Vector2( -4, 0 )
 b = Vector2( -8, 0 )
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 1, 4 )
 
-[sub_resource type="CapsuleShape2D" id=21]
+[sub_resource type="CapsuleShape2D" id=25]
 radius = 3.5
 height = 7.0
 
@@ -1467,7 +1486,6 @@ anims/Explode = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="Ship" type="KinematicBody2D" parent="Objects"]
-editor/display_folded = true
 position = Vector2( 184.113, 176.91 )
 scale = Vector2( 1, -1 )
 collision_layer = 2
@@ -1489,6 +1507,7 @@ rotation = 1.5708
 shape = SubResource( 4 )
 
 [node name="Bridge" type="Area2D" parent="Objects"]
+editor/display_folded = true
 position = Vector2( 128, 66 )
 scale = Vector2( 1, -1 )
 script = ExtResource( 7 )
@@ -1516,75 +1535,64 @@ texture = ExtResource( 9 )
 vframes = 3
 
 [node name="Animation" type="AnimationPlayer" parent="Objects/Bridge/Sprite"]
-anims/Explode = SubResource( 15 )
+anims/Explode = SubResource( 5 )
 
 [node name="BridgeCollider" type="CollisionShape2D" parent="Objects/Bridge"]
-shape = SubResource( 16 )
+shape = SubResource( 6 )
 
 [node name="LeftCollider" type="CollisionShape2D" parent="Objects/Bridge"]
 position = Vector2( -78, 0 )
-shape = SubResource( 22 )
+shape = SubResource( 7 )
 
 [node name="RightCollider" type="CollisionShape2D" parent="Objects/Bridge"]
 position = Vector2( 78, 0 )
-shape = SubResource( 23 )
+shape = SubResource( 8 )
 
 [node name="Tank" type="Node2D" parent="Objects"]
-position = Vector2( 68.25, 67.25 )
 scale = Vector2( 1, -1 )
-__meta__ = {
-"_edit_group_": true
-}
+script = ExtResource( 10 )
+
+[node name="Missile" type="KinematicBody2D" parent="Objects/Tank"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource( 11 )
+
+[node name="Collider" type="CollisionShape2D" parent="Objects/Tank/Missile"]
+shape = SubResource( 12 )
+
+[node name="Sprite" type="Sprite" parent="Objects/Tank/Missile"]
+texture = ExtResource( 12 )
+vframes = 5
+hframes = 2
+frame = 4
+
+[node name="Animation" type="AnimationPlayer" parent="Objects/Tank/Missile/Sprite"]
+anims/Explode = SubResource( 13 )
 
 [node name="Vehicle" type="KinematicBody2D" parent="Objects/Tank"]
-editor/display_folded = true
+position = Vector2( 103, -156 )
 collision_layer = 2
 collision_mask = 7
-script = ExtResource( 10 )
+script = ExtResource( 13 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Objects/Tank/Vehicle"]
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 vframes = 5
 hframes = 2
 
 [node name="Animation" type="AnimationPlayer" parent="Objects/Tank/Vehicle/Sprite"]
-anims/Drive = SubResource( 5 )
-anims/Explode = SubResource( 6 )
+anims/Drive = SubResource( 9 )
+anims/Explode = SubResource( 10 )
 
 [node name="Collider" type="CollisionShape2D" parent="Objects/Tank/Vehicle"]
 rotation = 1.5708
-shape = SubResource( 7 )
+shape = SubResource( 11 )
 
 [node name="Helicopter" type="KinematicBody2D" parent="Objects"]
-editor/display_folded = true
 position = Vector2( 57.7667, 172.388 )
-scale = Vector2( 1, -1 )
-collision_layer = 2
-collision_mask = 7
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Objects/Helicopter"]
-texture = ExtResource( 13 )
-vframes = 3
-hframes = 2
-
-[node name="Animation" type="AnimationPlayer" parent="Objects/Helicopter/Sprite"]
-anims/Explode = SubResource( 8 )
-anims/fly = SubResource( 9 )
-
-[node name="Collider" type="CollisionShape2D" parent="Objects/Helicopter"]
-rotation = 1.5708
-shape = SubResource( 10 )
-
-[node name="Balloon" type="KinematicBody2D" parent="Objects"]
-editor/display_folded = true
-position = Vector2( 137.507, 219.258 )
 scale = Vector2( 1, -1 )
 collision_layer = 2
 collision_mask = 7
@@ -1593,49 +1601,70 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Objects/Balloon"]
+[node name="Sprite" type="Sprite" parent="Objects/Helicopter"]
 texture = ExtResource( 15 )
-vframes = 2
+vframes = 3
 hframes = 2
 
-[node name="Animation" type="AnimationPlayer" parent="Objects/Balloon/Sprite"]
-anims/Explode = SubResource( 11 )
+[node name="Animation" type="AnimationPlayer" parent="Objects/Helicopter/Sprite"]
+anims/Explode = SubResource( 14 )
+anims/fly = SubResource( 15 )
 
-[node name="Collider" type="CollisionShape2D" parent="Objects/Balloon"]
-shape = SubResource( 12 )
+[node name="Collider" type="CollisionShape2D" parent="Objects/Helicopter"]
+rotation = 1.5708
+shape = SubResource( 16 )
 
-[node name="Plane" type="KinematicBody2D" parent="Objects"]
-editor/display_folded = true
-position = Vector2( 84.9062, 112.076 )
+[node name="Balloon" type="KinematicBody2D" parent="Objects"]
+position = Vector2( 137.507, 219.258 )
 scale = Vector2( 1, -1 )
 collision_layer = 2
-collision_mask = 4
+collision_mask = 7
 script = ExtResource( 16 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Objects/Plane"]
+[node name="Sprite" type="Sprite" parent="Objects/Balloon"]
 texture = ExtResource( 17 )
+vframes = 2
+hframes = 2
+
+[node name="Animation" type="AnimationPlayer" parent="Objects/Balloon/Sprite"]
+anims/Explode = SubResource( 17 )
+
+[node name="Collider" type="CollisionShape2D" parent="Objects/Balloon"]
+shape = SubResource( 18 )
+
+[node name="Plane" type="KinematicBody2D" parent="Objects"]
+position = Vector2( 84.9062, 112.076 )
+scale = Vector2( 1, -1 )
+collision_layer = 2
+collision_mask = 4
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Objects/Plane"]
+texture = ExtResource( 19 )
 vframes = 4
 
 [node name="Animation" type="AnimationPlayer" parent="Objects/Plane/Sprite"]
-anims/Explode = SubResource( 13 )
+anims/Explode = SubResource( 19 )
 
 [node name="Collider" type="CollisionShape2D" parent="Objects/Plane"]
 rotation = 1.5708
-shape = SubResource( 14 )
+shape = SubResource( 20 )
 
 [node name="Alps" type="Sprite" parent="Objects"]
 position = Vector2( 36.606, 31.4689 )
 scale = Vector2( 1, -1 )
-texture = ExtResource( 18 )
+texture = ExtResource( 20 )
 vframes = 3
 hframes = 2
 
 [node name="Shooter" type="Node2D" parent="Objects"]
-editor/display_folded = true
-script = ExtResource( 19 )
+script = ExtResource( 21 )
 
 [node name="ArmedHeli" type="KinematicBody2D" parent="Objects/Shooter"]
 editor/display_folded = true
@@ -1643,52 +1672,52 @@ position = Vector2( 70.1746, 193.134 )
 scale = Vector2( 1, -1 )
 collision_layer = 2
 collision_mask = 5
-script = ExtResource( 20 )
+script = ExtResource( 22 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Objects/Shooter/ArmedHeli"]
-texture = ExtResource( 21 )
+texture = ExtResource( 23 )
 vframes = 3
 hframes = 2
 
 [node name="Animation" type="AnimationPlayer" parent="Objects/Shooter/ArmedHeli/Sprite"]
-anims/Explode = SubResource( 17 )
-anims/fly = SubResource( 18 )
+anims/Explode = SubResource( 21 )
+anims/fly = SubResource( 22 )
 
 [node name="Collider" type="CollisionShape2D" parent="Objects/Shooter/ArmedHeli"]
 rotation = 1.5708
-shape = SubResource( 10 )
+shape = SubResource( 16 )
 
 [node name="Missile" type="KinematicBody2D" parent="Objects/Shooter"]
 scale = Vector2( 1, -1 )
 collision_layer = 2
 collision_mask = 5
-script = ExtResource( 22 )
+script = ExtResource( 24 )
 
 [node name="Sprite" type="Sprite" parent="Objects/Shooter/Missile"]
-texture = ExtResource( 21 )
+texture = ExtResource( 23 )
 vframes = 3
 hframes = 2
 frame = 5
 
 [node name="Collider" type="CollisionShape2D" parent="Objects/Shooter/Missile"]
-shape = SubResource( 19 )
+shape = SubResource( 23 )
 
 [node name="PlayerMissile" type="KinematicBody2D" parent="."]
 editor/display_folded = true
 position = Vector2( 128, 50 )
 collision_layer = 4
 collision_mask = 3
-script = ExtResource( 23 )
+script = ExtResource( 25 )
 
 [node name="Collider" type="CollisionShape2D" parent="PlayerMissile"]
-shape = SubResource( 20 )
+shape = SubResource( 24 )
 
 [node name="Sprite" type="Sprite" parent="PlayerMissile"]
 scale = Vector2( 1, -1 )
-texture = ExtResource( 24 )
+texture = ExtResource( 26 )
 vframes = 3
 hframes = 3
 frame = 6
@@ -1702,19 +1731,19 @@ position = Vector2( 128, 12 )
 scale = Vector2( 1, -1 )
 collision_layer = 4
 collision_mask = 3
-script = ExtResource( 25 )
+script = ExtResource( 27 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Body" type="Sprite" parent="Player"]
-texture = ExtResource( 24 )
+texture = ExtResource( 26 )
 vframes = 3
 hframes = 3
 region_rect = Rect2( 0, 0, 16, 20 )
 
 [node name="Collider" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 21 )
+shape = SubResource( 25 )
 
 [node name="Camera" type="Camera2D" parent="Player"]
 offset = Vector2( 0, -220 )
@@ -1729,46 +1758,46 @@ autostart = true
 
 [node name="LevelEditor" type="Node2D" parent="."]
 
-[node name="WidthMarker" parent="LevelEditor" instance=ExtResource( 26 )]
+[node name="WidthMarker" parent="LevelEditor" instance=ExtResource( 28 )]
 position = Vector2( 68.3194, 0 )
 
-[node name="WidthMarker2" parent="LevelEditor" instance=ExtResource( 26 )]
+[node name="WidthMarker2" parent="LevelEditor" instance=ExtResource( 28 )]
 position = Vector2( 91.6368, 40 )
 origY = 40
 
-[node name="WidthMarker3" parent="LevelEditor" instance=ExtResource( 26 )]
+[node name="WidthMarker3" parent="LevelEditor" instance=ExtResource( 28 )]
 position = Vector2( 17.0345, 80 )
 origY = 80
 
-[node name="WidthMarker4" parent="LevelEditor" instance=ExtResource( 26 )]
+[node name="WidthMarker4" parent="LevelEditor" instance=ExtResource( 28 )]
 position = Vector2( 11.7297, 120 )
 origY = 120
 
-[node name="WidthMarker5" parent="LevelEditor" instance=ExtResource( 26 )]
+[node name="WidthMarker5" parent="LevelEditor" instance=ExtResource( 28 )]
 position = Vector2( -50.9518, 160 )
 origY = 160
 
-[node name="WidthMarker6" parent="LevelEditor" instance=ExtResource( 26 )]
+[node name="WidthMarker6" parent="LevelEditor" instance=ExtResource( 28 )]
 position = Vector2( 44.5759, 200 )
 origY = 200
 
-[node name="WidthMarker7" parent="LevelEditor" instance=ExtResource( 26 )]
+[node name="WidthMarker7" parent="LevelEditor" instance=ExtResource( 28 )]
 position = Vector2( 84.9857, 240 )
 origY = 240
 
-[node name="WidthMarker8" parent="LevelEditor" instance=ExtResource( 26 )]
+[node name="WidthMarker8" parent="LevelEditor" instance=ExtResource( 28 )]
 position = Vector2( -49.4238, 280 )
 origY = 280
 
-[node name="WidthMarker9" parent="LevelEditor" instance=ExtResource( 26 )]
+[node name="WidthMarker9" parent="LevelEditor" instance=ExtResource( 28 )]
 position = Vector2( -39.8787, 320 )
 origY = 320
 
-[node name="WidthMarker10" parent="LevelEditor" instance=ExtResource( 26 )]
+[node name="WidthMarker10" parent="LevelEditor" instance=ExtResource( 28 )]
 position = Vector2( 39.5595, 360 )
 origY = 360
 
-[node name="WidthMarker11" parent="LevelEditor" instance=ExtResource( 26 )]
+[node name="WidthMarker11" parent="LevelEditor" instance=ExtResource( 28 )]
 position = Vector2( 45.0976, 400 )
 origY = 400
 
@@ -1783,7 +1812,7 @@ polygon = PoolVector2Array( 0, 0, 256, 0, 256, 30, 0, 30 )
 
 [node name="FuelDisplay" type="Node2D" parent="HUD/Background"]
 position = Vector2( 100, 20 )
-script = ExtResource( 27 )
+script = ExtResource( 29 )
 
 [node name="Marker" type="Polygon2D" parent="HUD/Background/FuelDisplay"]
 position = Vector2( -29, -3 )
@@ -1791,7 +1820,7 @@ color = Color( 1, 0.968627, 0.396078, 1 )
 polygon = PoolVector2Array( 0, 0, 4, 0, 4, 10, 0, 10 )
 
 [node name="Display" type="Sprite" parent="HUD/Background/FuelDisplay"]
-texture = ExtResource( 28 )
+texture = ExtResource( 30 )
 
 [connection signal="body_entered" from="Objects/Fuel" to="Objects/Fuel" method="_on_Fuel_body_entered"]
 [connection signal="body_exited" from="Objects/Fuel" to="Objects/Fuel" method="_on_Fuel_body_exited"]
